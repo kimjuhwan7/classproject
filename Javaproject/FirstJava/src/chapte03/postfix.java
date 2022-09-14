@@ -9,5 +9,6 @@ public class postfix {
 		System.out.println("num2 : " + num2);// 대입이 먼저 되어서 5값을 받음
 
 		System.out.println("num1 : " + num1++);// 라인이 끝나면 num1은 6->7로 바뀜
+
 	}
 }
