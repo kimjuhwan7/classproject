@@ -6,6 +6,8 @@ public class Calculator {
 		Subtract(10, 10);
 		Multiply(10, 10);
 		Divide(10, 10);
+		
+		//
 	}
 
 	public static void Sum(int num1, int num2) {
