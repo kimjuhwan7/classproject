@@ -14,5 +14,7 @@ public class git_pairing_test {
 		System.out.print(hour + "시");
 		System.out.print(minute + "분");
 		System.out.print(second + "초");
+
 	}
+
 }
