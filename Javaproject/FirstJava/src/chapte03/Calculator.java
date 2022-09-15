@@ -4,19 +4,24 @@ import java.util.Scanner;
 
 public class Calculator {
 	public static void main(String[] args) {
+		while (true) {
+			Scanner sc = new Scanner(System.in);
+			System.out.println("첫번째 값과 두번째 값을 입력하세요");
 
-		Scanner sc = new Scanner(System.in);
-		System.out.print("첫번째 값 \t");
-		int num1 = sc.nextInt();
-		System.out.print("두번째 값 \t");
-		int num2 = sc.nextInt();
-		System.out.println();
-		System.out.println("두 수의 합" + sum(num1, num2));
-		System.out.println("두 수의 차" + minus(num1, num2));
-		System.out.println("두 수의 곱 " + multiply(num1, num2));
-		System.out.println("두 수의 / " + divide(num1, num2));
-		System.out.println("반지름의 둘레 " + round(num1));
-		System.out.println("반지름의 넓이 " + area(num1));
+			System.out.print("첫번째 값 \t");
+			int num1 = sc.nextInt();
+			System.out.print("두번째 값 \t");
+			int num2 = sc.nextInt();
+			System.out.println();
+			System.out.println("두 수의 합" + sum(num1, num2));
+			System.out.println("두 수의 차" + minus(num1, num2));
+			System.out.println("두 수의 곱 " + multiply(num1, num2));
+			System.out.println("두 수의 / " + divide(num1, num2));
+			System.out.println("반지름의 둘레 " + round(num1));
+			System.out.println("반지름의 넓이 " + area(num1));
+			System.out.println("");
+		}
+
 	}
 
 	public static int sum(int num1, int num2) {
