@@ -3,6 +3,8 @@ package chapte03;
 import java.util.Scanner;
 
 public class Calculator {
+	Scanner scn = new Scanner(System.in);
+
 	public static void main(String[] args) {
 		while (true) {
 			Scanner sc = new Scanner(System.in);
@@ -17,8 +19,13 @@ public class Calculator {
 			System.out.println("두 수의 차" + minus(num1, num2));
 			System.out.println("두 수의 곱 " + multiply(num1, num2));
 			System.out.println("두 수의 / " + divide(num1, num2));
-			System.out.println("반지름의 둘레 " + round(num1));
-			System.out.println("반지름의 넓이 " + area(num1));
+			System.out.println();
+			System.out.print("원에 반지름을 입력해 주세요 : ");
+			double num3 = sc.nextDouble();
+			System.out.println("반지름의 둘레 " + round(num3));
+			System.out.print("원에 넓이를 입력해 주세요 : ");
+			num3 = sc.nextDouble();
+			System.out.println("반지름의 넓이 " + area(num3));
 			System.out.println("");
 		}
 
@@ -48,15 +55,15 @@ public class Calculator {
 		return result;
 	}
 
-	public static double round(int num1) {
+	public static double round(double num3) {
 		// 둘레
-		double result = num1 * 2 * 3.14;
+		double result = num3 * 2 * 3.14;
 		return result;
 	}
 
-	public static double area(int num1) {
+	public static double area(double num3) {
 		// 넓이
-		double result = num1 * num1 * 3.14;
+		double result = num3 * num3 * 3.14;
 		return result;
 	}
 }
