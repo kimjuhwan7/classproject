@@ -37,6 +37,7 @@ public class SwitchCaseTest3 {
 		case "member":
 			System.out.println("쓰기 기능 가능");
 		default:
+			                                                                                                                                                                                                                                                                                                                                                                                                                            
 			break;
 		}
 
