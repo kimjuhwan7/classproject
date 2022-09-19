@@ -7,25 +7,27 @@ package chapter05.exam;
 
 public class Member {
 	String name;// 이름
-	long phone_number;// 전화번호
+	String phone_number;// 전화번호
 	String department;// 전공
 	int grade;// 학년
 	String email;// 이메일
 	String birthday;// 생일
 	String address;// 주소
 
-	Member(String name, long phon_number, String department, int grade, String email, String birthday, String address) {
+	Member(String name, String phone_number, String department, int grade, String email, String birthday,
+			String address) {
 		this.name = name;
-		this.phone_number = phon_number;
+		this.phone_number = phone_number;
 		this.department = department;
 		this.grade = grade;
 		this.email = email;
 		this.birthday = birthday;
 		this.address = address;
+
 	}
 
-	Member(String name, long phon_number, String department, int grade, String email) {
-		this(name, phon_number, department, grade, email, "미입력", "미입력");
+	Member(String name, String phone_number, String department, int grade, String email) {
+		this(name, phone_number, department, grade, email, "미입력", "미입력");
 	}
 
 	void member_Print() {
