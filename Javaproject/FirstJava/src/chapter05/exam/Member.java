@@ -29,12 +29,12 @@ public class Member {
 	}
 
 	void member_Print() {
-		System.out.println("이름: " + name);
+		System.out.println("   이름: " + name);
 		System.out.println("전화번호: " + phone_number);
-		System.out.println("전공: " + department);
-		System.out.println("학년: " + grade);
-		System.out.println("이메일: " + email);
-		System.out.println("생일: " + birthday);
-		System.out.println("주소: " + address);
+		System.out.println("   전공: " + department);
+		System.out.println("   학년: " + grade);
+		System.out.println("  이메일: " + email);
+		System.out.println("   생일: " + birthday);
+		System.out.println("   주소: " + address);
 	}
 }
