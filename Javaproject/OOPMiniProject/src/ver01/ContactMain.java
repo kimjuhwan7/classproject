@@ -12,9 +12,15 @@ public class ContactMain {
 		String address;// 주소
 		int birthday;// 생일
 		String group;// 그룹
+
+		String no;
 		while (true) {
 			System.out.print("이름을 입력해 주세요-->");
 			name = sc.nextLine();
+			if ("no".equalsIgnoreCase(name)) {
+				System.out.println("종료");
+				break;
+			}
 			System.out.print("전화번호를 입력해 주세요-->");
 			phonenumber = sc.nextInt();
 			sc.nextLine();
@@ -31,6 +37,7 @@ public class ContactMain {
 			Contact con = new Contact(name, phonenumber, email, address, birthday, group);
 
 			con.showContactInfo();
+			System.out.println("계속 하시려면 이름을 입력해주시고 그만하시려면 No를 입력해 주세요");
 		}
 	}
 
