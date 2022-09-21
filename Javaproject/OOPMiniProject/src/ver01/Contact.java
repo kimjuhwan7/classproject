@@ -68,12 +68,12 @@ public class Contact {
 
 	public void showContactInfo() {
 		System.out.println("------------------------");
-		System.out.println("   이름 : " + this.name);
-		System.out.println("전화번호 : " + this.phonenumber);
-		System.out.println("  이메일 : " + this.email);
-		System.out.println("   주소 : " + this.address);
-		System.out.println("   생일 : " + this.birthday);
-		System.out.println("   그룹 : " + this.group);
+		System.out.println("   이름 : " + getName());
+		System.out.println("전화번호 : " + getPhonenumber());
+		System.out.println("  이메일 : " + getMail());
+		System.out.println("   주소 : " + getAddress());
+		System.out.println("   생일 : " + getBirthday());
+		System.out.println("   그룹 : " + getGroup());
 		System.out.println("------------------------");
 
 	}
