@@ -13,7 +13,6 @@ public class ContactMain {
 		int birthday;// 생일
 		String group;// 그룹
 
-		String no;
 		while (true) {
 			System.out.print("이름을 입력해 주세요-->");
 			name = sc.nextLine();
