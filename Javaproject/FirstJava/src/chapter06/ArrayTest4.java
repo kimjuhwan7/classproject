@@ -19,10 +19,19 @@ public class ArrayTest4 {
 		arr[1][2] = 22;
 
 		for (int i = 0; i < arr.length; i++) {
- 			for (int j = 0; j <= arr.length; j++) {
+			for (int j = 0; j <= arr.length; j++) {
 				System.out.print("arr[" + i + "][" + j + "] =" + arr[i][j] + "\t");
 			}
 			System.out.println();
 		}
+		int[][] scores = { { 11, 12, 13 }, { 21, 22, 23 }, { 31, 32, 33 }, { 41, 42, 43 } };
+		// 0~3
+		for (int i = 0; i < scores.length; i++) {
+			for (int j = 0; j < scores[i].length; j++) {
+				System.out.print(scores[i][j] + "\t");
+			}
+			System.out.println();
+		}
+
 	}
 }

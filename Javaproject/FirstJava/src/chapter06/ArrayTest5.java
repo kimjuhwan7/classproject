@@ -1,13 +1,23 @@
 package chapter06;
 
+import java.util.Iterator;
+
 public class ArrayTest5 {
 	public static void main(String[] args) {
-//2차원 배열의 초기화
-		int[][] scores = { { 11, 12, 13 }, { 21, 22, 23 }, { 31, 32, 33 }, { 41, 42, 43 } };
-//0~3
-		for (int i = 0; i < scores.length; i++) {
-			for (int j = 0; j < scores[i].length; j++) {
-				System.out.print(scores[i][j]+"\t");
+
+		int[] numbers = { 2, 6, 5, 32, 65, 12 };
+
+		for (int num : numbers) {
+			System.out.print(num + "\t");
+		}
+		System.out.println();
+		System.out.println();
+		int[][] scores = { { 100, 90, 60 }, { 40, 100, 90 }, { 100, 90, 60 }, { 100, 90, 60 }, { 100, 90, 60 },
+				{ 100, 90, 60 } };
+
+		for (int[] temp : scores) {
+			for (int num : temp) {
+				System.out.print(num + "\t");
 			}
 			System.out.println();
 		}
