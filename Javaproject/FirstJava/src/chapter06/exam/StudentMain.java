@@ -20,6 +20,11 @@ public class StudentMain {
 		System.out.println("--------------------------------------------");
 		System.out.println("이름\t국어\t영어\t수학\t총점\t평균");
 
+		for (int i = 0; i < students.length; i++) {
+			students[i].printDate();
+			
+		}
+
 		for (Student s : students) {
 			s.printDate();
 			korTotalScore += s.getKorScore();
