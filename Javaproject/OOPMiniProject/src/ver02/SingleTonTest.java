@@ -6,11 +6,11 @@ public class SingleTonTest {
 
 	private SingleTonTest() {
 		System.out.println("김주환");
-		
+
 	}
 
 	public static SingleTonTest getInstance() {
-
+		in = new SingleTonTest();
 		return in;
 	}
 }
