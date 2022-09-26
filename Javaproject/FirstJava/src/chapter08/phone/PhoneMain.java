@@ -33,15 +33,13 @@ public class PhoneMain {
 		SmartPhone3 phone3 = new SmartPhone3("kin@gmail.com");
 		phone3.turnOn();
 		phone3.call();
-		phone3.appRun("기가");
-		System.out.println("3");
+
 		phone3.appRun("네이버");
 		phone3.appStep("네이버");
-
+ 
 		Phone phone05 = smartPhone2;
 		// .......
 		phone3.turnOff();
-		System.out.println("4");
 
 		Phone[] list = new Phone[3];
 		list[0] = phone01;
