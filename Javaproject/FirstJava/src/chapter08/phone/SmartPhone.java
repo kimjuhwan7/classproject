@@ -39,7 +39,7 @@ public class SmartPhone extends Computer implements Phone {
 	}
 
 	public static void main(String[] args) {
-		SmartPhone phone = new SmartPhone("cool@gmail.co,");
+		SmartPhone phone = new SmartPhone("cool@gmail.com");
 		phone.call();
 		phone.calculator();
 	}

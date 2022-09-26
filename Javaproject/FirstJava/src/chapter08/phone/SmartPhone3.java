@@ -15,8 +15,7 @@ public class SmartPhone3 extends Computer implements Phone, Application {
 		// 상수를 이용해서 번호를만들고 출력
 		String number1 = String.valueOf(Phone.PHONE_NUM_1);// 메소드 역활 반환타입 string 문자열로 만들어줌
 		String number9 = String.valueOf(Phone.PHONE_NUM_9);// 메소드 역활 반환타입 string 문자열로 만들어줌
-
-		System.out.println(number1 + number1 + number9 + "에 전화를 합니다.!!!!! 불났어요!!!!!?!");
+		System.out.println(number1 + number1 + number9 + "에 전화를 합니다. 불 났어요");
 
 	}
 
