@@ -36,7 +36,7 @@ public class PhoneMain {
 
 		phone3.appRun("네이버");
 		phone3.appStep("네이버");
- 
+
 		Phone phone05 = smartPhone2;
 		// .......
 		phone3.turnOff();
