@@ -10,15 +10,15 @@ public class Person {
 		this.personNumber = personNumber;
 	}
 
-	@Override
-	public String equals(String userName1, String userNum1) {
-		if (userName1,userName1.equals(userName1,personNumber)) {
-			return "주민번호가 동일합니다.";
-
-		} else {
-			return "주민번호가 틀립니다.";
-		}
-
-	}
+//	@Override
+//	public String equals(String userName1, String userNum1) {
+//		if (userName1,userName1.equals(userName1,personNumber)) {
+//			return "주민번호가 동일합니다.";
+//
+//		} else {
+//			return "주민번호가 틀립니다.";
+//		}
+//
+//	}
 
 }

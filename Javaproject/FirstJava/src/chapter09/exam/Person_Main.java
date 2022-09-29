@@ -6,7 +6,7 @@ public class Person_Main {
 
 	public static void main(String[] args) {
 		Person ps = new Person("김주환", "010204-3333333");
-		ps.equzals(ps);
+//		ps.equzals(ps);
 	}
 
 }
