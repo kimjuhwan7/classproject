@@ -33,7 +33,7 @@ public class ArrayListTest {
 
 		list.remove(1);
 		printAll(list);
-		
+
 		System.out.println(list.get(2));
 	}
 
