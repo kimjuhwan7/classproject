@@ -17,12 +17,12 @@ public class FootballPlayer {
 	public FootballPlayer(String string, int i, String string2, int j) {
 		// TODO Auto-generated constructor stub
 	}
-
+ 
 	public static void main(String[] args) {
 		String name;
 		int number;
 		String team;
-		int age;
+		int age; 
 
 		LinkedList<String> player = new LinkedList<>();
 		player.add("축");
