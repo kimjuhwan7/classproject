@@ -1,6 +1,11 @@
-package ver03;
+package ver06;
 
-public class Contact {
+//1. 메뉴 입력 시 발생할 수 있는 예외에 대하여 예외 처리합시다.
+//
+//2. 연락처 이름 이력 시에 공백에 대한 예외처리와 영문자와 한글만 허용하는 예외 처리를 해봅시다.
+//
+//3. 전화번호 형식에 맞지 않을 때 예외처리를 하고 중복될 때 예외 상황이 발생하도록 하고 예외 처리를 합시다.
+abstract class Contact implements ShowData {
 //	저장 정보
 //		이름
 //		전화번호
@@ -43,6 +48,8 @@ public class Contact {
 	}
 
 	public void setPhoneNumber(String phoneNumber) {
+		// 2. 연락처 이름 이력 시에 공백에 대한 예외처리와 영문자와 한글만 허용하는 예외 처리를 해봅시다.
+
 		this.phoneNumber = phoneNumber;
 	}
 
@@ -87,8 +94,7 @@ public class Contact {
 		System.out.println("주소 : " + this.address);
 		System.out.println("생일 : " + this.birthday);
 		System.out.println("그룹 : " + this.group);
-		
-		
+
 	}
 
 	@Override
@@ -96,10 +102,5 @@ public class Contact {
 		return "Contact2 [name=" + name + ", phoneNumber=" + phoneNumber + ", email=" + email + ", address=" + address
 				+ ", birthday=" + birthday + ", group=" + group + "]";
 	}
-
-//	public static void main(String[] args) {
-//		Contact contact = new Contact();
-//		contact.printInfo();
-//	}
 
 }
