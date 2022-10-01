@@ -1,6 +1,6 @@
 package chapter11.exam;
 
-import java.util.HashSet;
+import java.util.TreeSet;
 
 //1. 축구선수 인스턴스를 저장할 수 있는 List<E> 컬렉션 인스턴스를 생성해서 인스턴스를 저장하고 출력하는 프로그램을 만들어 봅시다.
 //
@@ -13,21 +13,20 @@ import java.util.HashSet;
 // 그램을 만들어 봅시다.
 //
 // 4. 축구선수의 번호를 key로 하고 축구선수 인스턴스를 저장하는 Map<K,V> 인스턴스를 이용해서 프로그램을 만들어봅시다.
-public class SetPlayer {
+public class TreeSetPlayer {
+
 	public static void main(String[] args) {
 
-		HashSet<FootballPlayer> set = new HashSet<>();
+		TreeSet<FootballPlayer> set = new TreeSet<>();
 		set.add(new FootballPlayer("손흥민", 010 - 0000 - 0000, "팀", 30));
 		set.add(new FootballPlayer("황희찬", 010 - 3333 - 3333, "2팀", 32));
 		set.add(new FootballPlayer("이강인", 010 - 2222 - 2222, "2팀팀", 33));
 		set.add(new FootballPlayer("손흥민", 010 - 0000 - 0000, "팀", 30));
 		set.add(new FootballPlayer("조현우", 010 - 0000 - 0000, "3팀팀", 42));
-		System.out.println("선수의 인원은 : " + set.size() + "명 입니다.");
 
+		System.out.println("요소의 개수 : " + set.size() + "개 입니다.");
 		for (FootballPlayer fp : set) {
 			System.out.println(fp);
 		}
-
 	}
-
 }
