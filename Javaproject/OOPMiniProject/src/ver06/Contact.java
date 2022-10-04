@@ -1,5 +1,7 @@
 package ver06;
 
+import java.util.Iterator;
+
 //1. 메뉴 입력 시 발생할 수 있는 예외에 대하여 예외 처리합시다.
 //
 //2. 연락처 이름 이력 시에 공백에 대한 예외처리와 영문자와 한글만 허용하는 예외 처리를 해봅시다.
@@ -40,17 +42,20 @@ abstract class Contact implements ShowData {
 	}
 
 	public void setName(String name) {
+
 		this.name = name;
 	}
+	// 2. 연락처 이름 이력 시에 공백에 대한 예외처리와 영문자와 한글만 허용하는 예외 처리를 해봅시다.
 
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}
 
 	public void setPhoneNumber(String phoneNumber) {
-		// 2. 연락처 이름 이력 시에 공백에 대한 예외처리와 영문자와 한글만 허용하는 예외 처리를 해봅시다.
+//		3. 전화번호 형식에 맞지 않을 때 예외처리를 하고 중복될 때 예외 상황이 발생하도록 하고 예외 처리를 합시다. (받았던 곳으로 돌려주기)
 
-		this.phoneNumber = phoneNumber;
+		this.phoneNumber = phoneNumber.trim();
+
 	}
 
 	public String getEmail() {

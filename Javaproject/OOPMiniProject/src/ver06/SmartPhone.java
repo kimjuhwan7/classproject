@@ -344,27 +344,37 @@ public class SmartPhone {
 		String name = null;
 		while (true) {
 			name = sc.nextLine();
+			String newName = name.replace(" ", "");// 문자열 공백제거 한칸공백을 0칸공백으로 바꿈
+
 			if (name != null && name.trim().length() != 0) {
+				char len = 0;
+				for (int i = 0; i < newName.length(); i++) {
+					len = newName.charAt(i);
+				}
+				if (!(len >= 65 && len <= 90 || len >= 97 && len <= 122 || len >= 'ㄱ' && len <= '힣')) {
+					System.out.println(newName + "한글,영문자만 입력해 주세요");
+					break;
+				}
 				// 배열 요소에 같은 이름의 요소가 있는지 체크함
 				boolean check = false;
 				// 이름 검색
-				for (int i = 0; i < numOfContact; i++) {
-					if (name.equals(contacts[i].getName())) {
+				for (int i1 = 0; i1 < numOfContact; i1++) {
+					if (name.equals(contacts[i1].getName())) {
 						check = true;
 						break;
 					}
 				}
 				if (check) {
 					System.out.println("같은 이름의 데이터가 존재합니다.\n 다시 입력하세요!!! >>> ");
-					continue;
+//					continue;
 				} else {
 					break;
 				}
+
 			} else {
 				System.out.println("공백은 허용하지 않습니다. 정상적인 문자를 입력하세요!");
 			}
 		}
-
 		return name;
 
 	}
@@ -374,32 +384,38 @@ public class SmartPhone {
 		String phoneNumber = null;
 
 		while (true) {
-
 			phoneNumber = sc.nextLine();
+			for (int i = 0; i < phoneNumber.length(); i++) {
 
-			if (phoneNumber != null && phoneNumber.trim().length() > 0) {
+				char len = phoneNumber.charAt(i);
+				if (!(len >= '0' && len <= '9')) {
+					System.out.println("숫자만 입력해 주세요");
+					continue;
 
-				boolean check = false;
-				// 중복여부 체크
-				for (int i = 0; i < numOfContact; i++) {
-					if (phoneNumber.equals(contacts[i].getPhoneNumber())) {
-						check = true;
+				} else if (phoneNumber != null && phoneNumber.trim().length() > 0) {
+
+					boolean check = false;
+					// 중복여부 체크
+					for (int i1 = 0; i1 < numOfContact; i1++) {
+						if (phoneNumber.equals(contacts[i1].getPhoneNumber())) {
+							check = true;
+							break;
+						}
+					}
+					if (check) {
+						System.out.println("중복된 전화번호가 존재합니다.\n 다시 입력해 주세요.>>>");
+					} else {
 						break;
 					}
-				}
-				if (check) {
-					System.out.println("중복된 전화번호가 존재합니다.\n 다시 입력해 주세요.>>>");
+
 				} else {
-					break;
+					System.out.println("공백은 허용하지 않습니다. 정상적인 문자를 입력하세요!");
 				}
 
-			} else {
-				System.out.println("공백은 허용하지 않습니다. 정상적인 문자를 입력하세요!");
 			}
-
+			return phoneNumber;
 		}
 
-		return phoneNumber;
 	}
 
 }

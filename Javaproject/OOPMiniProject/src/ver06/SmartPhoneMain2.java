@@ -6,11 +6,13 @@ public class SmartPhoneMain2 {
 	static String select = "김주환";
 
 	public static void main(String[] args) {
+
 		Scanner sc = new Scanner(System.in);
 		SmartPhone sp = SmartPhone.getInstance();
 		while (true) {
 
 			while (true) {
+
 				printMeun();
 				try {
 					int select = Integer.parseInt(sp.sc.nextLine());// 문자열을 받아서 인트타입에 정수로 변환해주는 코드!
