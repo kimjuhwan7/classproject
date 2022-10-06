@@ -2,6 +2,7 @@ package ver06;
 
 import java.util.Iterator;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class SmartPhone {
 
@@ -343,37 +344,50 @@ public class SmartPhone {
 	private String getName() {
 		String name = null;
 		while (true) {
-			name = sc.nextLine();
-			String newName = name.replace(" ", "");// 문자열 공백제거 한칸공백을 0칸공백으로 바꿈
+			try {
 
-			if (name != null && name.trim().length() != 0) {
-				char len = 0;
-				for (int i = 0; i < newName.length(); i++) {
-					len = newName.charAt(i);
-				}
-				if (!(len >= 65 && len <= 90 || len >= 97 && len <= 122 || len >= 'ㄱ' && len <= '힣')) {
-					System.out.println(newName + "한글,영문자만 입력해 주세요");
-					break;
-				}
-				// 배열 요소에 같은 이름의 요소가 있는지 체크함
-				boolean check = false;
-				// 이름 검색
-				for (int i1 = 0; i1 < numOfContact; i1++) {
-					if (name.equals(contacts[i1].getName())) {
-						check = true;
-						break;
+				name = sc.nextLine();
+				String newName = name.replace(" ", "");// 문자열 공백제거 한칸공백을 0칸공백으로 바꿈
+				if (newName != null && name.trim().length() != 0) {
+
+					if (!Pattern.matches("^[a-zA-Zㄱ-힣]*$", newName)) {
+						throw new Exception("이름에는 영문자와 한글만 입력이 가능합니다.\n다시 입력해 주세요");
 					}
 				}
-				if (check) {
-					System.out.println("같은 이름의 데이터가 존재합니다.\n 다시 입력하세요!!! >>> ");
-//					continue;
-				} else {
-					break;
-				}
 
-			} else {
-				System.out.println("공백은 허용하지 않습니다. 정상적인 문자를 입력하세요!");
+				if (name != null && name.trim().length() != 0) {
+					char len = 0;
+					for (int i = 0; i < newName.length(); i++) {
+						len = newName.charAt(i);
+					}
+					if (!(len >= 65 && len <= 90 || len >= 97 && len <= 122 || len >= 'ㄱ' && len <= '힣')) {
+						System.out.println(newName + "한글,영문자만 입력해 주세요");
+						break;
+					}
+					// 배열 요소에 같은 이름의 요소가 있는지 체크함
+					boolean check = false;
+					// 이름 검색
+					for (int i1 = 0; i1 < numOfContact; i1++) {
+						if (name.equals(contacts[i1].getName())) {
+							check = true;
+							break;
+						}
+					}
+					if (check) {
+						System.out.println("같은 이름의 데이터가 존재합니다.\n 다시 입력하세요!!! >>> ");
+//					continue;
+					} else {
+						break;
+					}
+
+				} else {
+//				System.out.println("공백은 허용하지 않습니다. 정상적인 문자를 입력하세요!");
+					throw new Exception("예외발생! 공백은 허용하지 않습니다. 정상적인 문자를 입력하세요!");
+				}
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
 			}
+
 		}
 		return name;
 
