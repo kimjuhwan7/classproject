@@ -14,8 +14,8 @@ public class MessegServer {
 		Socket s = ss.accept();
 
 		System.out.println("클라이언트가 접속했습니다.");
-		DataInputStream din = new DataInputStream(s.getInputStream());
-		DataOutputStream dout = new DataOutputStream(s.getOutputStream());
+		DataInputStream din = new DataInputStream(s.getInputStream());// 가져온값
+		DataOutputStream dout = new DataOutputStream(s.getOutputStream());// 보낼때 사용
 
 		Scanner sc = new Scanner(System.in);
 
@@ -25,7 +25,7 @@ public class MessegServer {
 
 		while (!str1.equals("exit")) {
 			str1 = din.readUTF();
-			System.out.println("Client message " + str1);
+			System.out.println("Client message : " + str1);
 			str2 = sc.nextLine();
 			dout.writeUTF(str2);
 			dout.flush();
