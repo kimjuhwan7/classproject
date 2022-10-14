@@ -74,6 +74,28 @@ from emp e join salgrade s
 on e.sal between s.losal and s.hisal;
 
 -- 판매 내역 : 판매 정보, 판매 서적의 정보, 고객의 정보
-select *
-from book, customer, orders;
+
+
+
+select orders.orderdate, customer.name, book.bookname, book.price, orders.saleprice
+from book, customer, orders
+where orders.custid = customer.custid and orders.bookid = book.bookid
+order by orders.orderdate desc
+;
+select o.orderdate, c.name, b.bookname, b.price, o.saleprice
+from orders o join customer c
+on o.custid=c.custid
+join book b 
+on o.bookid = b.bookid
+where name='박지성';
+
+select * from customer;
+
+select c.name, count(*) as "구매횟수"
+from orders o join customer c
+on o.custid=c.custid
+join book b 
+on o.bookid = b.bookid
+--where name='박지성'
+group by c.name;
 
