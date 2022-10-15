@@ -6,11 +6,9 @@ import java.util.Scanner;
 public class Exam2Main {
 
 	public static void main(String[] args) {
-
-		
-		// 2. Scanner 클래스로
-
 		Scanner sc = new Scanner(System.in);
+
+		// 2. Scanner 클래스로
 
 		System.out.println("숫자를 입력하세요. >>>"); // 123456789
 
@@ -21,6 +19,7 @@ public class Exam2Main {
 		} catch (InputMismatchException e) {
 			System.out.println("예외발생");
 			System.out.println("정상적인 숫자를 입력해주세요.");
+
 		}
 
 	}
