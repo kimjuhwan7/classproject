@@ -21,20 +21,20 @@ and e.ename like '%A%';
 
 --37. JOIN을 이용하여 NEW YORK에 근무하는 모든 사원의 이름, 업무, 부서번호 및 부서명을 출력하시오.
 
-select e.ename, e.job, e.deptno
+select e.ename, e.job, e.deptno,e.deptno
 from dept d, emp e
 where d.deptno= e.deptno
 and d.loc = 'NEW YORK';
 
 --38. SELF JOIN을 사용하여 사원의 이름 및 사원번호, 관리자 이름을 출력하시오.
 
-select *
+select e1.ename, e1.empno, e2.ename
 from emp e1,emp e2
 where e1.mgr=e2.empno;
 ​
 --39. OUTER JOIN, SELF JOIN을 사용하여 관리자가 없는 사원을 포함하여 사원번호를 기준으로 내림차순 정렬하여 출력하시오.
 
-select *
+select e1.ename, e1.empno, e2.ename
 from emp e1,emp e2
 where e1.mgr=e2.empno(+)
 order by e1.empno desc;​
