@@ -36,7 +36,6 @@ public class InsetTest {
 			pstmt.setInt(1, 50);
 			pstmt.setString(2, "개발");
 			pstmt.setString(3, "서울");
-			
 
 			int result = pstmt.executeUpdate();
 
@@ -47,7 +46,7 @@ public class InsetTest {
 			conn.close();
 
 		} catch (SQLException e) {
-			
+
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
