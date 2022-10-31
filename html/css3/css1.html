@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            color: tomato;
+        }
+
+        h1 {
+            background-color: blueviolet;
+            color: azure;
+        }
+
+        p {
+            background-color: blue;
+            color: yellow;
+            font-weight: bold;
+        }
+
+        h1,
+        p {
+            font-size: 24px;
+        }
+
+        /*
+            선택자 { 속성이름 : 속성 값;}
+        */
+        div {
+            border: 1px saddlebrown solid;
+            margin: 10px;
+        }
+
+        #header {
+            background-color: darkcyan;
+            padding: 10px;
+        }
+
+        #aside {
+            background-color: azure;
+            color: blueviolet;
+            width: 100px;
+            height: 100px;
+        }
+
+        #content {
+            background-color: black;
+            color: #ffffff;
+        }
+
+        #footer {
+            background-color: beige;
+            color: black;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .font_bold {
+            font-weight: bold;
+        }
+
+        .font_italic {
+            font-style: italic;
+        }
+
+        .font_size32 {
+            font-size: 32px;
+        }
+
+        input[type] {
+            padding: 10px;
+            font-size: 20px;
+        }
+
+        input[type=text] {
+            background-color: aqua;
+        }
+
+        input[type=password] {
+            background-color: yellow;
+        }
+
+        img[src] {
+            margin: 100px;
+        }
+
+        img[src$=png] {
+            border: 5px solid red;
+        }
+
+        img[src$=jpg] {
+            border: 5px solid blue;
+        }
+
+        /* 범위를 지정해서 선택하는 자손/후손 선택자 */
+        /* 자손선택자 */
+        #div1>h1,
+        #div1>h2 {
+            color: red;
+        }
+
+        /* 후손 선택자 */
+        #div1 h1 {
+            background-color: aqua;
+        }
+
+        /* 동일한 위치(뎁스) 에서 태그를 선택 : 동위선택자  */
+        /* 기준 -> 선택자 */
+
+        #div2>h1+h2 {
+            color: rgb(31, 219, 219);
+        }
+
+        #div2>h1~h2 {
+            background-color: black;
+        }
+
+        h3 {
+            border: 3px solid #000;
+        }
+
+        h3:hover {
+            background-color: aquamarine;
+            color: blue;
+            padding: 20px;
+            font-size: 32px;
+        }
+
+        h3:active {
+            font-size: 32px;
+            color: red;
+        }
+
+        /* 상태선택자 */
+        #uname:focus {
+            border: 10px solid pink;
+            border: 0px;
+            ;
+        }
+
+        #uname {
+            outline: 0px;
+        }
+
+        #chk:checked {
+            border: 10px solid pink;
+            width: 50px;
+            height: 50px;
+
+        }
+
+        #uname {
+            background-color: gray;
+        }
+
+        #uname:disabled {
+            background-color: green;
+        }
+
+        #menucheck {
+            display: none;
+        }
+
+        #menuCheck+div {
+            width: 300px;
+            background-color: aqua;
+
+            overflow: hidden;
+            display: none;
+
+        }
+
+        #menuCheck:checked+div {
+            width: 300px;
+            background-color: aqua;
+            height: 100px;
+            display: none;
+        }
+
+        #nenulabel:hover {
+            background-color: beige;
+        }
+
+        #menuList {
+            list-style: none;
+        }
+
+        #menuList>li {
+            float: left;
+            padding: 20px 30px;
+            /* border: 1px solid #000; */
+            background-color: eeeeee;
+        }
+
+        #menuList>li:first-child {
+            /* border-radius: 좌측상단 우측상단 우측하단 좌측하단 */
+            border-radius: 20px 0px 0px 20px;
+        }
+
+        #menuList>li:last-child{
+            border-radius:  0px 20px 20px 0px ;
+        }
+
+        #menuList>li:nth-child(2n){
+            /* background-color: chartreuse; */
+        }
+        
+        #menuList>li:nth-child(2n+1){
+            /* background-color: coral; */
+        } 
+        p::selection{
+            background-color: black;
+            color: aqua;
+        }
+        a{
+            color: black;
+            text-decoration: none;
+        }
+        a:hover{
+            color: blueviolet;
+            font-weight: bold;
+        }
+        a:visited{
+            color: coral;
+        }
+        a:active{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+
+        <li><a href="">home</a></li>
+        <li><a href="http://www.naver.com">네이버</a></li>
+        <li><a href="https://www.github.com">github</a></li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+
+
+
+    <ul id="menuList">
+
+        <li><a href="">home</a></li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+
+    <hr>
+
+
+    <label id="nenulabel" for="menuCheck">check</label> <input type="checkbox" id="menuCheck">
+    <div>
+        <h4>게임 타이틀</h4>
+        <p>요즘 제일 핫한 게임은 탕탕 특공대</p>
+    </div>
+    <hr>
+    <input type="text" id="uname" disabled>
+    <br>
+    <input type="checkbox" id="chk">
+    <h3>action</h3>
+    <div id="div2">
+        <h1>Header - 1</h1>
+        <h2>Header - 2</h2>
+        <h2>Header - 2</h2>
+        <h2>Header - 2</h2>
+
+    </div>
+    <hr>
+    <hr>
+    <div id="div1">
+        <h1>div - heading</h1>
+        <h2>div - heading2</h2>
+        <ul>
+            <li>
+                <h1>li - heading</h1>
+            </li>
+            <li>li - 2</li>
+            <li>li - 3</li>
+
+        </ul>
+    </div>
+
+    <img src="../html5/망나뇽.png" alt="망나뇽" height="100">
+    <img src="../html5/잠만보.png" alt="잠만보" height="100">
+    <input type="text"><input type="password">
+
+    <hr>
+    <div id="header" class="font_bold font_italic font_size32">header</div>
+    <div id="aside" class="font_size32">aside</div>
+    <div id="content">content</div>
+    <div id="footer" class="font_bold">footer</div>
+    <h1>서울 아파트 거래 역대 최저… 9월 856건 그쳐</h1>
+    <p>부동산시장이 날개 없는 추락을 거듭하고 있다. 지난달 아파트 거래량이 전달보다 더 줄어들었다. 특히 서울은 2006년 이후 역대 최저 수준이었던 전달 기록을 다시 갈아 치웠다.
+    </p>
+</body>
+
+</html>
