@@ -5,11 +5,15 @@
 }
 
 body {
-    background-color: rgb(240, 242, 245);
-}
+    
 
+}
+#background_color{
+    background-color: rgb(240, 242, 245);
+    height: 750px;
+}
 section {
-    width: 1200px;
+    width: 1020px;
     padding-top: 120px;
     margin: auto;
 
@@ -35,15 +39,17 @@ section {
 }
 
 #div_R {
-    height: 400px;
-    width: 450px;
-
-    float: left;
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px;
+    height: 380px;
+    width: 400px;
+    float: right;
 
 }
+#div_form{
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px #a0a0a0;
 
+}
 div>form {
     text-align: center;
 
@@ -53,15 +59,13 @@ li {
     font-size: 16px;
     width: 315px;
     margin: 10px auto;
-
-    height: 22px;
+    height: 10px;
     border-radius: 10px;
-    border: 1px solid #dddfe2;
     padding: 20px;
 }
 
 li>input[type=submit] {
-    width: 315px;
+    width: 383px;
     font-size: 20px;
     font-weight: bold;
     color: #fff;
@@ -70,14 +74,17 @@ li>input[type=submit] {
 
 li>p {
     font-size: 14px;
+    margin: 10px;
+    color: #1877f2;
 }
 
 ul>li>input {
-    margin-top: -20px;
-    padding: 11px 20px;
+    padding: 17px 37px;
     border-radius: 10px;
+    border: 1px solid #dddfe2;
     line-height: 100%;
-    width: 280px;
+    width: 300px;
+    margin-left: -30px;
 }
 
 form>button {
@@ -88,21 +95,17 @@ form>button {
     font-weight: bold;
     border: 0px;
     color: #fff;
-
+    margin: 25px;
     background-color: rgb(54, 164, 32);
 }
-
-
-
-
-
-
-
-
-
-
-
-
+#comment>p{
+    font-size: 14px;
+   margin-top: 18px;
+   text-align: center;
+}
 footer {
     background-color: #fff;
+}
+footer>ul>li{
+    display: inline-block;
 }
