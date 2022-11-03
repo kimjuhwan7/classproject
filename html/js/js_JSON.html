@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let url = {
+            name: '네이버',
+            address: 'https://www.naver.com',
+            no: 1
+        }
+        console.log(url, typeof url);
+        //object -> JSON (문자열)
+        let jsonStr = JSON.stringify(url)
+        console.log(jsonStr, typeof jsonStr)
+
+        let urls = [
+
+            {
+                name: '네이버',
+                address: 'https://www.naver.com',
+                no: 1
+            }, {
+                name: '구글',
+                address: 'https://www.google.com',
+                no: 2
+            }, {
+                name: '카카오',
+                address: 'https://www.kakao.com',
+                no: 3
+            }
+        ]
+        let urlsStr = JSON.stringify(urls)
+        console.log(urlsStr);
+
+        let ulrList = {
+            title: '즐겨찾기 리스트',
+            count: 3,
+            urls: [
+                {
+                    name: '네이버',
+                    address: 'https://www.naver.com',
+                    no: 1
+                }, {
+                    name: '구글',
+                    address: 'https://www.google.com',
+                    no: 2
+                }, {
+                    name: '카카오',
+                    address: 'https://www.kakao.com',
+                    no: 3
+                }
+            ]
+        }
+        let ulrListStr = JSON.stringify(ulrList)
+        console.log(ulrList ,typeof ulrListStr)
+
+        //JSON(문자열) -> Object 
+        let newObjUrlList = JSON.parse(ulrListStr)
+        console.log(newObjUrlList,typeof newObjUrlList);
+
+        console.log('')
+        console.log(newObjUrlList.title);
+        console.log('리스트의 개수 : ' , newObjUrlList.count);
+        newObjUrlList.urls.array.forEach(element => {
+                console.log(element.name, element.address);
+        });
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

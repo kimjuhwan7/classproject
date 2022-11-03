@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // window.open()
+// window.open('','newWindow')
+// window.open('https:///www.naver.com','new','width=400')
+// let child = window.open('','child','width=300. height=300')
+// child.document.write('<h1>부모 윈도우에서 테스트를 동적 추가</h1>')
+// child.document.write('<h1 onclick="self.close();">윈도우 닫기</h1>')
+    </script>
+    <script>
+        // console.log(screen);
+        // console.log(location)
+        // console.log(history);
+        // console.log(navigator);
+        //이벤트 설정
+        // document.addEventListener('이벤트 이름',핸들러함수)
+        document.addEventListener('DOMContentLoaded', () => {
+            let h1 = document.querySelector('h1');
+            // console.log(h1,typeof h1);
+            // console.log(h1.innerHTML);
+            // console.log(h1.innerText);
+            h1.textContent = 'HEADER'
+            h1.style.backgroundColor = 'blue'
+            h1.style.color = 'yellow'
+            h1.style.padding = '10px'
+            h1.style.margin = '20px'
+            h1.style.fontSize = 'small'
+            /////////////////////////
+            let headers = document.querySelectorAll('h1')
+            // console.log(headers);
+            headers.forEach((itme) => {
+                itme.textContent = 'header'
+                itme.style.backgroundColor = 'red'
+                itme.style.color = 'white'
+            });
+
+            let header = document.getElementById('header')
+            header.textContent = 'last Header'
+
+
+        });
+
+
+    </script>
+</head>
+
+<body>
+    <h1><i>안녕하세요</i></h1>
+    <h1>안녕하세요</h1>
+    <h1>안녕하세요</h1>
+    <h1>안녕하세요</h1>
+    <h1 id="header"><i>안녕하세요</i></h1>
+</body>
+
+</html>
