@@ -8,17 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let cnt = 0;
 
-
-
-
-
-
     const addTodo = () => {
 
-        if (/[a-zA-Z0-9]/.test.value) {
+        if (!(/[a-zA-Z0-9]/.test(user_id.value))) {
             alert('아이디는 대문자 소문자 숫자만을 조합하는 문자열 입력만 가능합니다.')
+            return
         }
-
         console.log(user_id.value);
         if (user_id.value.trim() === '') {
             alert('아이디를 입력해 주세요')
@@ -35,7 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (user_ckpw.value !== user_pw.value) {
             alert('비밀번호와 같게 적어주세요.')
             return
-        } console.log(user_name.value);
+        }
+        console.log(user_name.value);
         if (user_name.value.trim() === '') {
             alert('이름을 입력해 주세요')
             return
@@ -48,6 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const newTh_name = document.createElement('th')
         const btn = document.createElement('button')
 
+        todolist.appendChild(newTr)
+
         newTr.appendChild(newTh_idx)
         newTr.appendChild(newTh_id)
         newTr.appendChild(newTh_pw)
@@ -56,8 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const key = cnt++;
         newTr.setAttribute('user_idx', key)
-        btn.setAttribute('del_button')
-        btn.set
+      
 
         newTh_idx.textContent = key
         newTh_id.textContent = user_id.value
@@ -69,19 +66,16 @@ document.addEventListener('DOMContentLoaded', () => {
             removeTodo(key)
         })
 
-        todolist.appendChild(newTr)
 
-        // user_id.value = ''
-        // user_pw.value = ''
-        // user_ckpw.value = ''
-        // user_name.value = ''
+        user_id.value = ''
+        user_pw.value = ''
+        user_ckpw.value = ''
+        user_name.value = ''
     }
     const removeTodo = (key) => {
         const delElement = document.querySelector(`tr[user_idx="${key}"]`)
         todolist.removeChild(delElement)
     }
     addBtn.addEventListener('click', addTodo)
-    function warning_alert(cursor, str) {
-        alert()
-    }
+  
 })
