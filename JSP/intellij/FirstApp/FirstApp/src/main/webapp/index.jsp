@@ -10,6 +10,8 @@
 <br/>
 <a href="hello-servlet">Hello Servlet</a>
 <br>
-<a href="my">myServlet</a>
+<a href="my">myServlet</a><br>
+<a href="mypage.jsp">mypage.jsp</a>
+<br><a href="login.jsp">login.jsp</a>
 </body>
 </html>
