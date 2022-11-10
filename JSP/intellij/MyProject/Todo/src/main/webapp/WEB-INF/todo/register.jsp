@@ -12,7 +12,7 @@
 </head>
 <body>
 <h1>${title}</h1>
-<form action="/controller/register" method="post">
+<form action="/register" method="post">
     <input type="text" name="in_title"><br>
     <input type="date" name="in_date"><br>
     <input type="reset" value="RESET">

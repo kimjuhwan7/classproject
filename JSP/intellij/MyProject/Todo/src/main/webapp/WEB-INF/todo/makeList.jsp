@@ -12,12 +12,15 @@
 </head>
 <body>
 <%
-    List<Todolist> todolist = new ArrayList<>();
-    todolist.add(new Todolist("양치하기", "2022-11-09", false));
-    todolist.add(new Todolist("약 복용하기", "2022-11-10", true));
-    todolist.add(new Todolist("학원가기", "2022-11-01", false));
+    ArrayList<Todolist> todolists = new ArrayList<Todolist>();
+    todolists.add(new Todolist("양치하기", "2022-11-09", "yes"));
+    todolists.add(new Todolist("약 복용하기", "2022-11-10", "no"));
+    todolists.add(new Todolist("학원가기", "2022-11-01", "yes"));
 
-    session.setAttribute("todolist", todolist);
+    session.setAttribute("todolist", todolists);
 %>
+<form action="/todo/list">
+    <input type="submit" value="세션추가">
+</form>
 </body>
 </html>

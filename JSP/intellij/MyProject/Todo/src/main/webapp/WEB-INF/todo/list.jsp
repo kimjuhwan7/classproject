@@ -1,4 +1,3 @@
-
 <%--
   Created by IntelliJ IDEA.
   User: cheoho-hi
@@ -16,24 +15,14 @@
 <body>
 <h1>${title}</h1>
 
-<table border="1">
-    <tr>
-        <th>index</th>
-        <th>타이틀</th>
-        <th>날짜</th>
-        <th>아이디</th>
-        <th>이름</th>
-        <th>비밀번호</th>
-    </tr>
-    <c:forEach var="todolist" items="${todolist}" varStatus="stat">
-        <tr>
-            <td><a href="">${stat.index}</a></td>
-            <td>${todolist.title}</td>
-            <td>${todolist.date}</td>
-            <td>${todolist.check}</td>
-        </tr>
-    </c:forEach>
-</table>
 
+<ul>
+    <c:forEach var="num" begin="1" end="10">
+        <li><a href="/read?tno=${num}">${num}</a> Todo 제목 2022-11-10 done</li>
+    </c:forEach>
+    <li></li>
+</ul>
+
+<a href="/register">ToDo 등록</a>
 </body>
 </html>

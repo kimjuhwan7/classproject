@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f460497a-5ddc-466e-aac6-e45b05fdf7c5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../Javaproject/DEPTManager/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Javaproject/DEPTManager/.classpath" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,6 +11,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2HDjwvoMFwH0dgUTzaJzbpmxrq9" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -23,7 +26,9 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/kjh71/Documents/GitHub/classproject/JSP/intellij/FirstApp"
+    "last_opened_file_path": "C:/Users/kjh71/Documents/GitHub/classproject/JSP/intellij",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "advanced.settings"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -35,6 +40,9 @@
       <option name="presentableId" value="Default" />
       <updated>1667826790856</updated>
       <workItem from="1667826792023" duration="9000" />
+      <workItem from="1667914495219" duration="51000" />
+      <workItem from="1667914577296" duration="52000" />
+      <workItem from="1667914760942" duration="68000" />
     </task>
     <servers />
   </component>

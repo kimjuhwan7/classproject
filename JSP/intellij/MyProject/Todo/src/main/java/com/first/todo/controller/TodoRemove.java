@@ -14,6 +14,8 @@ public class TodoRemove extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("delete post()");
 
+        response.sendRedirect("/todo/list");
     }
 }

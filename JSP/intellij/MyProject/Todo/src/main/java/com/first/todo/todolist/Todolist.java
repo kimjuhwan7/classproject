@@ -1,15 +1,16 @@
 package com.first.todo.todolist;
 
 public class Todolist {
-    public Todolist(String title, String date, boolean check) {
+    private String title;
+    private String date;
+    private String check;
+
+    public Todolist(String title, String date, String check) {
         this.title = title;
         this.date = date;
         this.check = check;
     }
 
-    private String title;
-    private String date;
-    private boolean check;
 
     public String getTitle() {
         return title;
@@ -27,11 +28,11 @@ public class Todolist {
         this.date = date;
     }
 
-    public boolean isCheck() {
+    public String getCheck() {
         return check;
     }
 
-    public void setCheck(boolean check) {
+    public void setCheck(String check) {
         this.check = check;
     }
 

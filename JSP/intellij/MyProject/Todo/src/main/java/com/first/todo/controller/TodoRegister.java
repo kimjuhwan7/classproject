@@ -5,7 +5,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "TodoRegister", value = "/controller/register")
+@WebServlet(name = "TodoRegister", value = "/register")
 public class TodoRegister extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -25,6 +25,7 @@ public class TodoRegister extends HttpServlet {
 
     String result ="TodoList";
     request.setAttribute("title",result);
+
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/todo/list.jsp");
 
