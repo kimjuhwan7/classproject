@@ -16,7 +16,6 @@
 
 <h1>Todo Read</h1>
 
-${todo}
 <table>
 
     <tr>
@@ -36,6 +35,6 @@ ${todo}
         <td><input type="checkbox" name="finished" ${zx ? 'checked':''}></td>
     </tr>
 </table>
-<a href="#">Modify/Remove</a> <a href="/todo/list">Todo List</a>
+<a href="/todo/modify?tno=${todo.tno}">Modify/Remove</a> <a href="/todo/list">Todo List</a>
 </body>
 </html>

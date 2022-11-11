@@ -18,8 +18,8 @@ public class TodoReadController extends HttpServlet {
         System.out.println("요청번호 :" + tno);
 
         //Service 요청한 tno로 할일 목록을 검색해서 결과 -> todoDTO로 반환
-        TodoDTO todo = new TodoDTO(1, "숙제", "2022-11-30", false);
-        request.setAttribute("todo", todo);
+     TodoDTO todo = new TodoDTO(1, "숙제", "2022-11-30", false);
+       request.setAttribute("todo", todo);
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/todo/read.jsp");
         dispatcher.forward(request, response);
