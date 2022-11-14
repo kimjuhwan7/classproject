@@ -18,8 +18,9 @@ public class TodoListController extends HttpServlet {
         //String title = "Todo List";
 
         request.setAttribute("title", "Todo List");
-        request.setAttribute("todoList", new TodoService().getTodoList());
 
+        request.setAttribute("list", TodoService.getInstance());
+        System.out.println("todoList_1");
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/todo/list.jsp");
         dispatcher.forward(request, response);
