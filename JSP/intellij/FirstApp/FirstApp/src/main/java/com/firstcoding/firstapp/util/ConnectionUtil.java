@@ -15,9 +15,9 @@ public class ConnectionUtil {
     private ConnectionUtil() {
         HikariConfig config = new HikariConfig();
         config.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        config.setJdbcUrl("jdbc:mysql://localhost:3301/project");
+        config.setJdbcUrl("jdbc:mysql://localhost:3306/project");
         config.setUsername("scott");
-        config.setPassword("tiger");
+        config.setPassword("Test!!!!");
 
         config.addDataSourceProperty("cachePrepStmts",true);
         config.addDataSourceProperty("prepStmtCacheSize",250);

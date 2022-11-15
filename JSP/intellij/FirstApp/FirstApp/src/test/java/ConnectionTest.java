@@ -10,16 +10,16 @@ public class ConnectionTest {
     @Test
     public void testConnections() throws Exception {
 
-        Class.forName("com.mysql.cj.jdbc.Drivers");
+        Class.forName("com.mysql.cj.jdbc.Driver");
 
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3301/project", "scott", "tiger");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "scott", "Test!!!!");
 
         Assertions.assertNotNull(conn);
 
         conn.close();
     }
 
-    @Test
+//    @Test
     public void testPoolConnections() throws Exception {
         Connection conn = ConnectionUtil.getInstance().getConnection();
 

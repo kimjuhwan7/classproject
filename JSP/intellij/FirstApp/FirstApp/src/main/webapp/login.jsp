@@ -20,7 +20,7 @@
             session.setAttribute("loginId", userid);//세션에 로그인아이디 저장
             response.sendRedirect("mypage.jsp");
         } else {
-            response.sendRedirect("login.html");
+            response.sendRedirect("login.jsp");
         }
 
         LocalDate now = LocalDate.now();
