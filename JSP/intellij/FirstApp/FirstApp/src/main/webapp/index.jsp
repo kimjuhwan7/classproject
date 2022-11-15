@@ -16,14 +16,15 @@
 <br><a href="login.jsp">login.jsp</a>
 
 <hr>
-<c:if test="${loginInfo} eq null">
-    <a href="/logins">로그인</a>
+<c:if test="${loginInfo eq null}">
+    <a href="/login">로그인</a>
 </c:if>
 <br>
-<c:if test="${loginInfo}">
-회원 정보 :${loginInfo}
+<c:if test="${loginInfo != null}">
+    회원 정보 :${loginInfo}
+    <br>
+    <a href="/logout">로그아웃</a>
 </c:if>
-<br>
-<a href="/logouts">로그아웃</a>
+
 </body>
 </html>

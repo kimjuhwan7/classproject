@@ -22,7 +22,7 @@ public class ConnectionProvider {
 
         Class.forName("com.mysql.cj.jdbc.Drivers");
 
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3301/project", "scott", "tiger");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "scott", "Test!!!!");
         
         return conn;
     }

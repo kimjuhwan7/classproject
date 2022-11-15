@@ -38,4 +38,23 @@ public class MemberService {
         return dao.insertMember(conn, member);
     }
 
+    public Member login(String uid, String pw) throws Exception {
+
+        @Cleanup Connection conn = ConnectionUtil.getInstance().getConnection();
+        log.info("MemberService_login...", conn, uid, pw);
+        return dao.selectByUidPw(conn, uid, pw);
+
+    }
+
+    public int updateUUTD(int idx, String uuid) throws Exception {
+        @Cleanup Connection conn = ConnectionUtil.getInstance().getConnection();
+        return dao.updateUUIDByIdx(conn, uuid, idx);
+
+    }
+
+    public Member selectByUUID(String uuid) throws Exception {
+        @Cleanup Connection conn = ConnectionUtil.getInstance().getConnection();
+        return dao.selectByUUID(conn, uuid);
+    }
+
 }

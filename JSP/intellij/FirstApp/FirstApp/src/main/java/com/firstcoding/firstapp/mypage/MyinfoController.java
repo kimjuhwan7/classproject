@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet(name = "MyPageController", value = "/mypage/myinfo")
+@WebServlet(name = "MyinfoController", value = "/mypage/myinfo")
 @Log4j2
 public class MyinfoController extends HttpServlet {
     @Override
