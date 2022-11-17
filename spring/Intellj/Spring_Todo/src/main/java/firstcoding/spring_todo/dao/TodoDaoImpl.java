@@ -17,8 +17,6 @@ public class TodoDaoImpl implements TodoDao {
 
     @Override
     public int insertTodo(Connection conn) throws SQLException {
-        int result = 0;
-        String sql = "inserti into "
 
         return 0;
     }

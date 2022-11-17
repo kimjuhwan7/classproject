@@ -11,16 +11,16 @@
     <title>Title</title>
 </head>
 <body>
-<h1>register</h1>
+<h1>register등록</h1>
 
 <form method="post">
     <table>
         <tr>
-            <td><input type="text" name="title"></td>
+            <td><input type="text" name="utitle"></td>
             <td></td>
         </tr>
         <tr>
-            <td><input type="text" name="uday"></td>
+            <td><input type="date" name="uday"></td>
             <td></td>
         </tr>
         <tr>
