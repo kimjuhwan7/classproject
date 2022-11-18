@@ -3,7 +3,7 @@ plugins {
     id 'war'
 }
 
-group 'com.firstcoding.mvc'
+group 'com.todo'
 version '1.0-SNAPSHOT'
 
 repositories {
@@ -39,12 +39,18 @@ dependencies {
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.22'
 
 
-
     implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.16.0'
     implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.16.0'
     implementation group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.16.0'
 
     implementation group: 'jstl', name: 'jstl', version: '1.2'
+
+
+    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.31'
+
+    // https://mvnrepository.com/artifact/com.zaxxer/HikariCP
+    implementation group: 'com.zaxxer', name: 'HikariCP', version: '5.0.1'
 
 }
 

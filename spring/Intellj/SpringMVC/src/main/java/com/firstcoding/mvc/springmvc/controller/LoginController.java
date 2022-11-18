@@ -40,6 +40,7 @@ public class LoginController {
         log.info("uid = >" + uid);
         log.info("pw=>" + pw);
         log.info("p=>" + page);
+        log.info("---------------");
         log.info("uId2=>" + uId2);
         log.info("pw2=>" + pw2);
         log.info("loginRequest=>" + loginRequest);
