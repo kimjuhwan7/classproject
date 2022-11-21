@@ -46,7 +46,11 @@ public class LoginController {
         log.info("loginRequest=>" + loginRequest);
         log.info("paramMap => " + paramMap);
 
-        return "login/login";// "redirect:/index"
+
+        request.getSession().setAttribute("loginInfo", uid);
+
+        //  return "login/login";// "redirect:/index"
+        return "redirect:/mypage/mypage1";
     }
 
 
