@@ -1,15 +1,18 @@
 package com.todo.todospring.domain;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
-@ToString
+@Data
 @Builder
+
+/*리스트 내용*/
 public class TodoDTO {
 
     private long tno;

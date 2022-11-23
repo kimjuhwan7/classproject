@@ -1,6 +1,7 @@
 package com.todo.todospring.controller;
 
 import com.todo.todospring.service.TodoService;
+import com.todo.todospring.service.TodoServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +12,7 @@ public class TodolistController {
     private final TodoService todoService;
 
 
-    public TodolistController(TodoService todoService) {
+    public TodolistController(TodoServiceImpl todoService) {
         this.todoService = todoService;
     }
 

@@ -6,8 +6,10 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 public interface MemberDao {
-
+    /*멤버 추가*/
     int insertMember(Connection conn, Member member) throws SQLException;
-
+    /*로그인화면 아이디 비빈번호 비교*/
     Member selectByIdPw(Connection conn, String uid, String pw) throws SQLException;
+
+
 }

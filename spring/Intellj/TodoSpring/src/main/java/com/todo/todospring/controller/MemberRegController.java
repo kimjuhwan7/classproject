@@ -1,7 +1,7 @@
 package com.todo.todospring.controller;
 
 import com.todo.todospring.domain.MemberRegRequest;
-import com.todo.todospring.service.MemberRegService;
+import com.todo.todospring.service.MemberRegServiceImpl;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 public class MemberRegController {
 
     @Autowired
-    private MemberRegService regService;
+    private MemberRegServiceImpl regService;
 
 
     @GetMapping

@@ -9,6 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Getter
 @Setter
 @ToString
+/*이미지 저장되었는 도메인*/
 public class MemberRegRequest {
     private String uid;
     private String pw;

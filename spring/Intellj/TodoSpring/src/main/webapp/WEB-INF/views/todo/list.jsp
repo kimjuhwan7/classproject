@@ -7,6 +7,11 @@
         td {
             padding: 5px;
         }
+
+        a {
+            text-decoration: navajowhite;
+
+        }
     </style>
 </head>
 <body>
@@ -31,12 +36,20 @@
     </c:forEach>
 
 
-
 </table>
 
 
-<a href="/todo/register">Todo 등록하기</a>
-
-
+<a href="/imgregister">Todo 등록하기</a>
+<hr>
+<h3>이미지 저장소</h3>
+<form method="post" enctype="multipart/form-data">
+    <input type="file" name="Iimg">
+</form>
+<table>
+    <th></th>
+    <tr>
+        <td></td>
+    </tr>
+</table>
 </body>
 </html>

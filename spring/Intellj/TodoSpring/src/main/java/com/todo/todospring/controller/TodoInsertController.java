@@ -2,6 +2,7 @@ package com.todo.todospring.controller;
 
 import com.todo.todospring.domain.TodoDTO;
 import com.todo.todospring.service.TodoService;
+import com.todo.todospring.service.TodoServiceImpl;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,13 +16,13 @@ public class TodoInsertController {
 
     private final TodoService todoService;
 
-    public TodoInsertController(TodoService todoService) {
+    public TodoInsertController(TodoServiceImpl todoService) {
         this.todoService = todoService;
     }
 
 
     @GetMapping
-    public String getINsertForm() {
+    public String getInsertForm() {
 
         return "todo/register";
     }

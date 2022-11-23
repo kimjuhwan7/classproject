@@ -28,6 +28,8 @@
         <property name="defaultEncoding" value="UTF-8"/>
     </bean>
 
+
+
     <!--로그인 체크하는 인터셉터 등록-->
     <mvc:interceptors>
         <mvc:interceptor>

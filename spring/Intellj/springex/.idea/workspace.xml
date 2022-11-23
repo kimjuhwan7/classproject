@@ -5,26 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c7d8085-ddbb-43b0-a994-59df507bcd4d" name="변경" comment="변경">
-      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/java/com/firstcoding/mvc/springmvc/controller/DateConverterController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/java/com/firstcoding/mvc/springmvc/domain/UserRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/java/com/firstcoding/mvc/springmvc/exception/CommonExceptionAdvice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/java/com/firstcoding/mvc/springmvc/formatter/LocalDateFormatter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/views/custom404.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/views/date.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/views/dateForm.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TodoSpring/src/main/java/com/todo/todospring/formatter/CheckBoxFormatter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TodoSpring/src/main/java/com/todo/todospring/formatter/LocalDateFormatter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringMVC/src/main/java/com/firstcoding/mvc/springmvc/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC/src/main/java/com/firstcoding/mvc/springmvc/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringMVC/src/main/java/com/firstcoding/mvc/springmvc/controller/SampleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC/src/main/java/com/firstcoding/mvc/springmvc/controller/SampleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringMVC/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC/src/main/resources/log4j2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/spring/servlet-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/spring/servlet-context.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/views/mypage/mypage1.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/views/mypage/mypage1.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TodoSpring/src/main/java/com/todo/todospring/controller/TodoImgInsertController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TodoSpring/src/main/java/com/todo/todospring/service/TodoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TodoSpring/src/main/java/com/todo/todospring/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TodoSpring/src/main/java/com/todo/todospring/controller/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TodoSpring/src/main/java/com/todo/todospring/controller/TodoInsertController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TodoSpring/src/main/java/com/todo/todospring/controller/TodoInsertController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TodoSpring/src/main/java/com/todo/todospring/controller/TodoReadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TodoSpring/src/main/java/com/todo/todospring/controller/TodoReadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TodoSpring/src/main/java/com/todo/todospring/controller/TodoRemoveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TodoSpring/src/main/java/com/todo/todospring/controller/TodoRemoveController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TodoSpring/src/main/java/com/todo/todospring/controller/TodolistController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TodoSpring/src/main/java/com/todo/todospring/controller/TodolistController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TodoSpring/src/main/java/com/todo/todospring/controller/TodomodifyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TodoSpring/src/main/java/com/todo/todospring/controller/TodomodifyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TodoSpring/src/main/webapp/WEB-INF/spring/servlet-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TodoSpring/src/main/webapp/WEB-INF/spring/servlet-context.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TodoSpring/src/main/webapp/WEB-INF/views/todo/modify.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../TodoSpring/src/main/webapp/WEB-INF/views/todo/modify.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TodoSpring/src/main/java/com/todo/todospring/service/TodoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TodoSpring/src/main/java/com/todo/todospring/service/TodoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TodoSpring/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../TodoSpring/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TodoSpring/src/main/webapp/WEB-INF/views/loginForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../TodoSpring/src/main/webapp/WEB-INF/views/loginForm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TodoSpring/src/main/webapp/WEB-INF/views/todo/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../TodoSpring/src/main/webapp/WEB-INF/views/todo/list.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +46,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/cheoho-hi/Documents/GitHub/classproject/spring/Intellj/springex",
+    "last_opened_file_path": "C:/Users/cheoho-hi/Documents/GitHub/ju",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -74,6 +67,7 @@
       <workItem from="1668564928083" duration="1052000" />
       <workItem from="1668566422598" duration="19000" />
       <workItem from="1669173068418" duration="655000" />
+      <workItem from="1669183378550" duration="276000" />
     </task>
     <servers />
   </component>

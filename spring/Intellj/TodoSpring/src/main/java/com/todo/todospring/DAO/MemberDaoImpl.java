@@ -45,4 +45,18 @@ public class MemberDaoImpl implements MemberDao {
         }
         return member;
     }
+
+    /*인서트 이미지*/
+    @Override
+    public int insertImg(Connection conn, Member member) throws SQLException {
+
+        String sql = "insert into member(uid, pw, uname, uphoto) values(?,?,?,?)";
+        PreparedStatement pstmt = conn.prepareStatement(sql);
+        pstmt.setString(1, member.getUid());
+        pstmt.setString(2, member.getPw());
+        pstmt.setString(3, member.getUname());
+        pstmt.setString(4, member.getUphoto());
+
+        return pstmt.executeUpdate();
+    }
 }

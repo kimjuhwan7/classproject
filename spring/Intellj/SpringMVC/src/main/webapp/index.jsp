@@ -4,10 +4,30 @@
 <head>
     <title>JSP - Hello World</title>
 </head>
+<style>
+    table{
+        margin: 0px;
+    }
+a{
+    text-decoration: none;
+    padding: 10px;
+    background-color: beige;
+}
+a:hover{
+    background-color: yellow;
+}
+</style>
 <body>
 <h1><%= "Hello World!" %>
 </h1>
 <br/>
-<a href="hello-servlet">Hello Servlet</a>
+<table>
+    <tr>
+        <td style="margin: 10px"><a href="hello-servlet">Hello Servlet</a></td>
+        <td style="margin: 10px"><a href="/login">[로그인]</a></td>
+    </tr>
+</table>
+
+
 </body>
 </html>
