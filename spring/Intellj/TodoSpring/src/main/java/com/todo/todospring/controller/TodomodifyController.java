@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.time.LocalDate;
-
 @Log4j2
 @Controller
 @RequestMapping("/todo/modify")
@@ -32,13 +30,14 @@ public class TodomodifyController {
     }
 
     @PostMapping
-    public String modify(@RequestParam("tno") int tno,
+    public String modify(/*@RequestParam("tno") int tno,
                          @RequestParam("todo") String todo,
                          @RequestParam("dueDate") String dueDate,
-                         @RequestParam(value = "finished", required = false) String finished
+                         @RequestParam(value = "finished", required = false*/
+            TodoDTO todoDTO
     ) {     //꼭 들어오지 않아도 될때 required=false
 
-        TodoDTO todoDTO = new TodoDTO(tno, todo, LocalDate.parse(dueDate), finished == null ? false : true);
+//        TodoDTO todoDTO = new TodoDTO(tno, todo, LocalDate.parse(dueDate), finished == null ? false : true);
         log.info(todoDTO);
 
         todoService.modify(todoDTO);

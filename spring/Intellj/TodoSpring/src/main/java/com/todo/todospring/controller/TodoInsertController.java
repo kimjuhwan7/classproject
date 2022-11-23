@@ -7,9 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import java.time.LocalDate;
 
 @Log4j2
 @Controller
@@ -30,16 +27,19 @@ public class TodoInsertController {
     }
 
     @PostMapping
-    public String insert(@RequestParam("todo") String todo,
-                         @RequestParam("dueDate") String dueDate) {
+    public String insert(/*@RequestParam("todo") String todo,
+                         @RequestParam("dueDate") String dueDate*/
 
-        log.info(todo);
-        log.info(dueDate);
+            TodoDTO todoDTO) {
 
-        TodoDTO todoDTO = TodoDTO.builder()
+        log.info(todoDTO.getTodo());
+        log.info(todoDTO.getDueDate());
+        log.info(todoDTO);
+
+        /*TodoDTO todoDTO = TodoDTO.builder()
                 .todo(todo)
                 .dueDate(LocalDate.parse(dueDate))
-                .build();
+                .build();*/
 
         log.info("todoDTO => " + todoDTO);
 

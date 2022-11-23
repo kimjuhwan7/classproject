@@ -5,6 +5,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -32,7 +33,8 @@ public class LoginController {
                         HttpServletRequest request,
                         HttpServletResponse response,
                         @ModelAttribute("req") LoginRequest loginRequest,
-                        @RequestParam Map paramMap
+                        @RequestParam Map paramMap,
+                        RedirectAttributes redirectAttributes
     ) {
         String uId2 = request.getParameter("uid");
         String pw2 = request.getParameter("pw");
@@ -48,6 +50,9 @@ public class LoginController {
 
 
         request.getSession().setAttribute("loginInfo", uid);
+
+        redirectAttributes.addAttribute("type", "test");// get으로 전달
+        redirectAttributes.addFlashAttribute("msg", "에러메시지");//데이터를 한번만 전달됨 1회성
 
         //  return "login/login";// "redirect:/index"
         return "redirect:/mypage/mypage1";
