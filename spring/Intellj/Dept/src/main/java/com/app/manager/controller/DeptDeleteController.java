@@ -9,8 +9,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @Log4j2
-public class DeptDeleteController {
 
+public class DeptDeleteController {
+    /*삭제 컨트롤러*/
     @Autowired
     private DeptDeleteService deptDeleteService;
 

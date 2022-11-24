@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @Log4j2
 public class DeptListController {
-
+/*전체출력 컨트롤러*/
     @Autowired
     private DeptListService deptListService;
 

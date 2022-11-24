@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 @RequestMapping("/dept/edit")
 public class DeptEditController {
-
+/*수정 컨트롤러*/
     @Autowired
     private DeptReadService deptReadService;
 

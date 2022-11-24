@@ -10,7 +10,7 @@ import lombok.ToString;
 @NoArgsConstructor
 
 public class DeptDTO {
-
+/*도메인*/
     private int deptno;
     private String dname;
     private String loc;

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/dept/register")
 public class DeptRegController {
-
+/*입력 컨트롤러*/
     @Autowired
     private DeptRegService regService;
 

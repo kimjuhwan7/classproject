@@ -7,6 +7,7 @@ import java.util.List;
 
 @Mapper
 public interface DeptMapper {
+
     /*전체 부서 리스트*/
     List<DeptDTO> selectAll();
 
