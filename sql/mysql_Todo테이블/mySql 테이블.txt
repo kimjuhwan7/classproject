@@ -1,0 +1,23 @@
+
+tbl_todo 테이블
+
+CREATE TABLE `tbl_todo` (
+  `tno` int NOT NULL AUTO_INCREMENT,
+  `todo` varchar(100) COLLATE utf8mb3_bin NOT NULL,
+  `duedate` date DEFAULT (curdate()),
+  `finished` tinyint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`tno`)
+) ENGINE=InnoDB AUTO_INCREMENT=4124 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin
+
+member 테이블
+
+CREATE TABLE `member` (
+  `idx` int NOT NULL AUTO_INCREMENT,
+  `uid` varchar(45) COLLATE utf8mb3_bin NOT NULL,
+  `pw` varchar(45) COLLATE utf8mb3_bin NOT NULL,
+  `uuid` varchar(45) COLLATE utf8mb3_bin DEFAULT NULL,
+  `uname` varchar(45) COLLATE utf8mb3_bin NOT NULL,
+  `uphoto` varchar(45) COLLATE utf8mb3_bin DEFAULT NULL,
+  PRIMARY KEY (`idx`),
+  UNIQUE KEY `uid_UNIQUE` (`uid`)
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin

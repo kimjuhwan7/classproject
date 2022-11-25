@@ -1,0 +1,5 @@
+mysql 계정
+
+
+id :  scott
+pw:  Test!!!!
