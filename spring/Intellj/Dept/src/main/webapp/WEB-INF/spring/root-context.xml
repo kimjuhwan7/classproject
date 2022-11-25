@@ -2,17 +2,19 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:mybatis="http://mybatis.org/schema/mybatis-spring"
-       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
-       http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+       http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd">
 
     <!--
                 데이터 베이스 관련 작업
                 핵심 로직 처리하는 Bean 등록 설정
                 Service / Dao
-
         -->
     <context:component-scan base-package="com.app.manager.service"></context:component-scan>
 
@@ -40,7 +42,7 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="mapperLocations" value="classpath:/mappers/**/*.xml"></property>
     </bean>
-
+    <!--누락시 메퍼 적용 불가능-->
     <mybatis:scan base-package="com.app.manager.mapper"></mybatis:scan>
 
 
@@ -50,6 +52,11 @@
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
+    <!--트랜젝션 설정-->
+ <!--   <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
 
+    <tx:annotation-driven  transaction-manager="transactionManager"/>-->
 </beans>
 

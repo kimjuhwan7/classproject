@@ -15,6 +15,8 @@
     <context:component-scan
             base-package="com.app.manager.controller"></context:component-scan><!--자동으로 bean 등록해주는것.-->
 
+    <mvc:resources mapping="/css/**" location="/css/"/>
+    <mvc:resources mapping="/js/**" location="/js/"/>
 
     <!--resources mapping :사용자의 요청 => /image/mini.jsg-->   <!-- ** : 뒤에 뭐가오던 상관없다.-->
     <!--정적파일 등록-->

@@ -12,4 +12,6 @@ public interface MemberDao {
     Member selectByIdPw(Connection conn, String uid, String pw) throws SQLException;
 
 
+    /*인서트 이미지*/
+    int insertImg(Connection conn, Member member) throws SQLException;
 }

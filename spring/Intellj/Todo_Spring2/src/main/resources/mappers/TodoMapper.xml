@@ -1,6 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--주소값 정확하게 적어줘야함!-->
+<mapper namespace="com.todo.todo_spring2.mapper.TodoMapper">
+    <!--resultType = 별칭-->
 
-</beans>
+    <select id="selectAlltodo" resultType="com.todo.todo_spring2.domain.TodoDTO">
+        select * from tbl_todo
+    </select>
+    <insert id="inserttodo" parameterType="com.todo.todo_spring2.domain.TodoDTO">
+        insert into tbl_todo(todo, dueDate) values(#{todo},#{dueDate})
+    </insert>
+    <update id="updatetodo" parameterType="com.todo.todo_spring2.domain.TodoDTO">
+        update dept set todo=#{todo}, dueDate=#{dueDate} where deptno=#{deptno}
+    </update>
+
+</mapper>

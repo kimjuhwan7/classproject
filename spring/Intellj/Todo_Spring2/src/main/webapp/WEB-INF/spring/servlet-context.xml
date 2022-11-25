@@ -13,7 +13,7 @@
     <mvc:annotation-driven></mvc:annotation-driven>
     <!--빈 2개 생성안되게 controller만 경로 잡아줌-->
     <context:component-scan
-            base-package="com.app.manager.controller"></context:component-scan><!--자동으로 bean 등록해주는것.-->
+            base-package="com.todo.todo_spring2.controller"></context:component-scan><!--자동으로 bean 등록해주는것.-->
 
 
     <!--resources mapping :사용자의 요청 => /image/mini.jsg-->   <!-- ** : 뒤에 뭐가오던 상관없다.-->

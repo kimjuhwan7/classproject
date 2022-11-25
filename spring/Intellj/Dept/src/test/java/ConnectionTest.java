@@ -1,4 +1,5 @@
 import com.app.manager.domain.DeptDTO;
+import com.app.manager.domain.DeptSerachOption;
 import com.app.manager.mapper.DeptMapper;
 import com.app.manager.mapper.TimeMapper;
 import lombok.extern.log4j.Log4j2;
@@ -12,6 +13,8 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 @Log4j2
 @ExtendWith(SpringExtension.class)
@@ -45,7 +48,7 @@ public class ConnectionTest {
 
     @Test
     public void getDeptinsetTest() {
-        DeptDTO deptDTO = new DeptDTO(30, "te1st", "tes1tLoc");
+        DeptDTO deptDTO = new DeptDTO(30, "te1st", "NEW");
         log.info("입력 DEPT >>>>>>" + deptMapper.insertDept(deptDTO));
     }
 
@@ -73,4 +76,22 @@ public class ConnectionTest {
         connection.close();
 
     }
+
+
+    @Test
+    public void deptSelectByDeptnosTest() {
+        List<Integer> list = new ArrayList<>();
+        list.add(10);
+        list.add(30);
+        list.add(50);
+        log.info(">>>>>>>>>>> In  연산 테스트" + deptMapper.selectByDeptnos(list));
+    }
+
+    @Test
+    public void deptSelectByOptionTest() {
+        log.info(deptMapper.selectByOption(DeptSerachOption.builder()
+                .searchType("loc").keyword("NEW")
+                .build()));
+    }
+
 }

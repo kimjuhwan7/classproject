@@ -1,7 +1,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
+<!--주소값 정확하게 적어줘야함!-->
 <mapper namespace="com.app.manager.mapper.DeptMapper">
     <!--resultType = 별칭-->
 
@@ -10,7 +10,46 @@
         select * from dept
     </select>
 
+    <select id="selectByOption"
+            parameterType="com.app.manager.domain.DeptSerachOption"
+            resultType="com.app.manager.domain.DeptDTO">
+        select * from dept
+        <where>
+            <if test="searchType != null and keyword != null">
+                <if test="searchType == 'dname'">
+                    <!--dname like concat('%', #{keword}, '%')-->
+                    <include refid="searchDname"/>
+                </if>
+                <if test="searchType == 'loc'">
+                    <!--loc like concat('%', #{keword}, '%')-->
+                    <include refid="searchLoc"/>
+                </if>
+            </if>
+        </where>
+    </select>
+    <sql id="searchDname">
+        dname like concat('%', #{keyword}, '%')
+    </sql>
+
+    <sql id="searchLoc">
+        loc like concat('%', #{keyword}, '%')
+    </sql>
+
+    <select id="selectByDeptnos" parameterType="list" resultType="com.app.manager.domain.DeptDTO">
+        select * from dept
+        <where>
+            <if test="list !=null and list.size !=0">
+                deptno In
+                <foreach collection="list" item="item" index="index" separator="," open="(" close=")">
+                    #{item}
+                </foreach>
+            </if>
+        </where>
+    </select>
+
+
     <!--부분 검색-->
+
     <select id="selectBydeptno" resultType="com.app.manager.domain.DeptDTO">
         select * from dept where deptno=#{deptno}   <!--전달 데이터가 하나있으면 변수명은 상관없다-->
     </select>
