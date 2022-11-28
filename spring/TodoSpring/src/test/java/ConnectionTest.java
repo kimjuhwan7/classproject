@@ -30,67 +30,90 @@ public class ConnectionTest {
     @Autowired(required = false)
     private TodoMapper todoMapper;
 
-    @Test
-    public void selectAllTest() {
-        List<TodoDTO> list = todoMapper.selectAll();
 
-        log.info(list);
+    @Test
+    public void deleteTodoTest(){
+        int result = todoMapper.deleteTodo(8);
+        Assertions.assertEquals(1, result);
     }
 
     @Test
-    public void selectByTnoTest() {
-        TodoDTO todoDTO = todoMapper.selectByTno(6);
+    public void updateTodoTest(){
 
+        TodoDTO todoDTO = TodoDTO.builder()
+                .tno(8)
+                .todo("단위테스트 결과 보고")
+                .dueDate(LocalDate.now())
+                .finished(true)
+                .build();
+
+        int result = todoMapper.updateTodo(todoDTO);
+
+        Assertions.assertEquals(1, result);
+
+    }
+
+    @Test
+    public void insertTodoTest(){
+
+        TodoDTO todoDTO = TodoDTO.builder()
+                .todo("단위테스트")
+                .dueDate(LocalDate.now())
+                .build();
+
+        int result = todoMapper.insertToDo(todoDTO);
+
+        Assertions.assertEquals(1, result);
+
+    }
+
+    @Test
+    public void selectByTnoTest(){
+        TodoDTO todoDTO = todoMapper.selectByTno(1);
         log.info(todoDTO);
         Assertions.assertNotNull(todoDTO);
     }
 
-    @Test
-    public void insertToDoTest() {
-        TodoDTO todoDTO = TodoDTO.builder().todo("단위테스트").dueDate(LocalDate.now()).build();
-
-        int result = todoMapper.insertToDo(todoDTO);
-        log.info(result);
-        Assertions.assertEquals(1, result);
-    }
 
     @Test
-    public void updateTodoTest() {
-        TodoDTO todoDTO = TodoDTO.builder().tno(4124).todo("단위테스트 결과보고").dueDate(LocalDate.now()).finished(true).build();
-        int result = todoMapper.updateTodo(todoDTO);
-
-        Assertions.assertEquals(1, result);
-    }
-
-    @Test
-    public void deleteTodoTest() {
-        int result = todoMapper.deleteTodo(5);
-        Assertions.assertEquals(1, result);
+    public void selectAllTest(){
+        List<TodoDTO> list = todoMapper.selectAll();
+        log.info(list);
     }
 
 
     @Test
-    public void inserMemberTest() throws SQLException {
-        Member member = Member.builder().uid("hto").pw("1234").uname("HOT").build();
+    public void insetMemberTest() throws SQLException {
+
+        Member member = Member.builder()
+                .uid("hto")
+                .pw("1234")
+                .uname("HOT")
+                .build();
 
         int result = memberMapper.insertMember(member);
 
         Assertions.assertEquals(1, result);
+
     }
 
 
     @Test
     public void selectByIdPwTest() throws SQLException {
-        Member member = memberMapper.selectByIdPw("cool", "1234");
+
+        Member member = memberMapper.selectByIdPw("cools", "1111");
 
         log.info(member);
 
-//        Assertions.assertNotNull(member);
+        Assertions.assertNull(member);
+
     }
+
 
 
     @Test
     public void connectionTest() throws SQLException {
+
         Connection conn = dataSource.getConnection();
 
         log.info(conn);
@@ -98,6 +121,8 @@ public class ConnectionTest {
         Assertions.assertNotNull(conn);
 
         conn.close();
+
     }
+
 
 }
