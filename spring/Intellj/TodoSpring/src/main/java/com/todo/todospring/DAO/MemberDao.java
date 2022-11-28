@@ -1,10 +1,11 @@
 package com.todo.todospring.DAO;
 
 import com.todo.todospring.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-
+@Repository
 public interface MemberDao {
     /*멤버 추가*/
     int insertMember(Connection conn, Member member) throws SQLException;

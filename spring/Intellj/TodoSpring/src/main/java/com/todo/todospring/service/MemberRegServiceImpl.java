@@ -1,14 +1,14 @@
 package com.todo.todospring.service;
 
-import com.todo.todospring.DAO.MemberDao;
 import com.todo.todospring.domain.Member;
 import com.todo.todospring.domain.MemberRegRequest;
-import com.todo.todospring.domain.TodoImgDTO;
+import com.todo.todospring.mapper.MemberMapper;
 import com.todo.todospring.util.ConnectionProvider;
 import lombok.Cleanup;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
@@ -19,8 +19,8 @@ import java.sql.Connection;
 @Log4j2
 public class MemberRegServiceImpl implements MemberRegService {
 
-    @Autowired
-    private MemberDao memberDao;
+    @Autowired(required = false)
+    private MemberMapper memberMapper;
 
     private static String getDirRealpath(HttpServletRequest request, String dirURI) {
         String dirRealpath = request.getSession().getServletContext().getRealPath(dirURI);
@@ -32,6 +32,7 @@ public class MemberRegServiceImpl implements MemberRegService {
     /*사용자 입력 이미지 파일 확인 후 업로드 처리*/
 
     @Override
+    @Transactional
     public int memberReg(MemberRegRequest regRequest, HttpServletRequest request) throws Exception {
         String newFileName = null;
 
@@ -64,27 +65,27 @@ public class MemberRegServiceImpl implements MemberRegService {
 
         @Cleanup Connection conn = ConnectionProvider.getInstance().getConnection();
 
-        return memberDao.insertMember(conn, member);
+        return memberMapper.insertMember(member);
     }
 
 
-    @Override
+    /*@Override
     public int todoReg(TodoImgDTO imgDTO, HttpServletRequest request) {
         String newImgName = null;
 
-        /*파일 업로드 처리 여부 체크*/
+        *//*파일 업로드 처리 여부 체크*//*
         if (imgDTO.getIimg() != null && !imgDTO.getIimg().isEmpty() && imgDTO.getIimg().getSize() > 0) {
-            /*저장할 폴더 uri 주소*/
+            *//*저장할 폴더 uri 주소*//*
             String dirURI = "/image";
-            /*시스템의 절대 경로*/
+            *//*시스템의 절대 경로*//*
             String dirRealpath = getDirRealpath(request, dirURI);
 
-            /*중복 방지를 위해 사용(시스템 나노초 + 이미지파일 이름)*/
+            *//*중복 방지를 위해 사용(시스템 나노초 + 이미지파일 이름)*//*
             newImgName = System.nanoTime() + imgDTO.getIimg().getOriginalFilename();
 
             //저장
             try {
-                /*위에서 만들어준 절대경로에 이미지 이름을 붙여서 이미지 주소를 만들어줌*/
+                *//*위에서 만들어준 절대경로에 이미지 이름을 붙여서 이미지 주소를 만들어줌*//*
                 imgDTO.getIimg().transferTo(new File(dirRealpath, newImgName));
             } catch (IOException e) {
                 throw new RuntimeException(e);
@@ -97,5 +98,5 @@ public class MemberRegServiceImpl implements MemberRegService {
 
 
         return;
-    }
+    }*/
 }

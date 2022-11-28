@@ -1,0 +1,17 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--주소값 정확하게 적어줘야함!-->
+<mapper namespace="com.todo.todospring.mapper.TodoMapper">
+
+
+    <insert id="insertToDo" parameterType="com.todo.todospring.domain.TodoDTO">
+        insert into tbl_todo (todo, dueDate) values (#{todo}, #{dueDate})
+    </insert>
+
+    <update id="updateTodo" parameterType="com.todo.todospring.domain.TodoDTO">
+        update tbl_todo set todo=#{todo}, dueDate=#{dueDate}, finished=#{finished} where tno=#{tno}
+    </update>
+
+
+</mapper>

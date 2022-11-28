@@ -1,11 +1,12 @@
 package com.todo.todospring.DAO;
 
 import com.todo.todospring.domain.TodoDTO;
+import org.springframework.stereotype.Repository;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
-
+@Repository
 public interface TodoDao {
 
     // 전체 리스트 출력

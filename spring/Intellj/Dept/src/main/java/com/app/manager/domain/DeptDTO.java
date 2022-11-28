@@ -23,7 +23,7 @@ public class DeptDTO {
     @NotEmpty /*문자열은 비어있지 않은 상태, List-> 요소의 개수가 비어있는지*/
     private String dname;
 
-    @NotEmpty
+    @NotEmpty //""fall" " pass
     private String loc;
 }
 

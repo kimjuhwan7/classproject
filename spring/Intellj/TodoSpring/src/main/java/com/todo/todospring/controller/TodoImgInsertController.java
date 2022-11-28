@@ -18,11 +18,12 @@ public class TodoImgInsertController {
 
     private final TodoService todoService;
 
+/*
 
     @PostMapping
     public String Ing(MemberRegRequest regRequest, HttpServletRequest request) {
 
 
     }
-
+*/
 }

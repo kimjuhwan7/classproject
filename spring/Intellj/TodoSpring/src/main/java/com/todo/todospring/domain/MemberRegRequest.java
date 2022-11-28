@@ -3,6 +3,8 @@ package com.todo.todospring.domain;
 import lombok.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.validation.constraints.NotEmpty;
+
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -11,9 +13,13 @@ import org.springframework.web.multipart.MultipartFile;
 @ToString
 /*이미지 저장되었는 도메인*/
 public class MemberRegRequest {
+    @NotEmpty(message = "uid는 필수 항목")
     private String uid;
+    @NotEmpty
     private String pw;
+    @NotEmpty
     private String uname;
+
     private MultipartFile uphoto;
 
 

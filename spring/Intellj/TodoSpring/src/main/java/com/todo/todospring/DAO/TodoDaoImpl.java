@@ -11,7 +11,7 @@ import java.util.Collections;
 import java.util.List;
 
 /*my sql연결해서 CRUD 처리 코드*/
-@Repository(value = "todoDao")
+
 public class TodoDaoImpl implements TodoDao {
     @Autowired
     private TodoDao dao;

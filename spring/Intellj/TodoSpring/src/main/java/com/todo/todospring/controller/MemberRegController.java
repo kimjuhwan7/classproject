@@ -5,11 +5,13 @@ import com.todo.todospring.service.MemberRegServiceImpl;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 @Log4j2
 @Controller
@@ -26,11 +28,18 @@ public class MemberRegController {
         return "member/regForm";
     }
 
-//    MemberRegRequest regRequest, HttpServletRequest request
+    //    MemberRegRequest regRequest, HttpServletRequest request
     @PostMapping
-    public String reg(
-            MemberRegRequest regRequest,HttpServletRequest request
+    public String reg(@Valid MemberRegRequest regRequest,
+                      BindingResult bindingResult,
+                      HttpServletRequest request
     ) throws Exception {
+        if (bindingResult.hasErrors()) {
+            log.info(bindingResult.getAllErrors());
+
+            return "redirect:/member/register";
+        }
+
         log.info("Mem =" + regRequest);
         log.info("Http =" + request);
 //        log.info("====" + regRequest.toMember());

@@ -9,7 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-@Repository
+
 public class MemberDaoImpl implements MemberDao {
     @Override
     public int insertMember(Connection conn, Member member) throws SQLException {
