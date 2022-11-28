@@ -24,7 +24,7 @@ public class TodoDTO {
 
     private boolean finished;
 
-    // 2022.11.28 작성자 추가 , member table foreign Key set
-    private int writer;
+  /*  // 2022.11.28 작성자 추가 , member table foreign Key set
+    private int writer;*/
 
 }

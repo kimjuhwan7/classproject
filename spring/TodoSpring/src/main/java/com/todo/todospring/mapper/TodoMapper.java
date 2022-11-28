@@ -1,11 +1,8 @@
 package com.todo.todospring.mapper;
 
 import com.todo.todospring.domain.TodoDTO;
-import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
 
-import java.sql.Connection;
 import java.util.List;
 
 @Mapper

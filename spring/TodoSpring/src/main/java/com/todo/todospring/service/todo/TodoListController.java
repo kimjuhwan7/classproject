@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.http.HttpSession;
 
 @Controller
+
 public class TodoListController {
 
     //@Autowired
@@ -25,8 +26,6 @@ public class TodoListController {
         if(session.isNew() || session.getAttribute("loginInfo") == null){
             return "redirect:/login";
         }
-
-        int memberIdx = ((LoginInfo) session.getAttribute("loginInfo")).getIdx();
 
         model.addAttribute("todoList", todoService.getTodoList());
         return "todo/list";
