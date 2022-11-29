@@ -19,7 +19,7 @@ public class DeptRegService {
     @Transactional
     public int insertDepts(DeptDTO deptDTO) {
         deptMapper.insertDept(deptDTO);
-        deptMapper.insertDept(new DeptDTO(10, "test", "test"));
+        deptMapper.insertDept(new DeptDTO(12, "test", "test"));
         return 0;
     }
 }

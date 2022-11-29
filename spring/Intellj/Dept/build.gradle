@@ -61,6 +61,8 @@ dependencies {
 // https://mvnrepository.com/artifact/org.hibernate/hibernate-validator
     implementation group: 'org.hibernate', name: 'hibernate-validator', version: '6.2.1.Final'
 
+
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.14.0'
 }
 
 test {
