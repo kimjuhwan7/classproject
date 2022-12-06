@@ -1,7 +1,6 @@
-package com.app.manager.mapper;
+package com.first.app.mapper;
 
-import com.app.manager.domain.DeptDTO;
-import com.app.manager.domain.DeptSerachOption;
+import com.first.app.domain.DeptDTO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -14,7 +13,7 @@ DeptMapper {
     List<DeptDTO> selectAll();
 
     /*검색 타입과 키워드를 받아서 검색 결과를 반환*/
-    List<DeptDTO> selectByOption(DeptSerachOption serachOption);
+    /*List<DeptDTO> selectByOption(DeptSerachOption serachOption);*/
 
     List<DeptDTO> selectByDeptnos(List<Integer> deptnos);
 

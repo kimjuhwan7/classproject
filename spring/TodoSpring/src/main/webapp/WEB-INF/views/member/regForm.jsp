@@ -33,10 +33,7 @@
             <td>사진</td>
             <td><input type="file" name="uphoto"></td>
         </tr>
-        <tr>
-            <td></td>
-            <td><input type="submit" value="회원가입"></td>
-        </tr>
+
     </table>
 
 </form>

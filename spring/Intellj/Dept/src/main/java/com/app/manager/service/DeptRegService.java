@@ -12,6 +12,7 @@ public class DeptRegService {
     @Autowired(required = false)
     private DeptMapper deptMapper;
 
+    
     public int insertDept(DeptDTO deptDTO) {
         return deptMapper.insertDept(deptDTO);
     }

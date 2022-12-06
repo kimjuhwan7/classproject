@@ -43,7 +43,7 @@
 </script>
 --%>
 </body>
-<script>
+<%--<script>
     const request = {
         get(url) {
             return fetch(url)
@@ -94,5 +94,25 @@
         .then(res => {
             console.log(res.body)
         })
+</script>--%>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script>
+    /*GET방식*/
+    axios.get('/api/v1/depts')
+        .then(res => {
+            console.log('res', res.data)
+        })
+        .cache(err => console.log(err))
+    /*POST방식*/
+    axios.post('/api/v1/depts',
+        {
+            "deptno": 35,
+            "dname": "DEV123",
+            "loc": "판교123"
+        })
+        .than(res => console.log(res))
+        .catch(err => console.log(err))
+
 </script>
 </html>

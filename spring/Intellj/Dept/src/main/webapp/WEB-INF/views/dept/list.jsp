@@ -16,7 +16,7 @@
 ${deptList}
 
 <hr>
-
+<%@page %>
 <a href="/dept/register">부서 등록</a>
 <div style="margin-top: 15px;">
     <form>
