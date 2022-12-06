@@ -27,7 +27,7 @@ DeptMapper {
     int deleteByDeptno(int deptno);
 
     /*입력*/
-    int insertDept(DeptDTO deptno);
+    int insertDept(DeptDTO deptDTO);
 
 
 }

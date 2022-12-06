@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>연산자</h1>
+
+<ul>
+    <li>10+20 = <span th:text="${10+20}"></span></li>
+    <li>10>20 = <span th:text="${10>20}"></span></li>
+    <li>10 % 2 ==0? 짝수 : 홀수 <span th:text="${10%2==0?'짝 수':'홀 수'}"></span></li>
+    <li>${data}?:'데이터가 없습니다.'=><span th:text="${data}?:'데이터가 없습니다.!!!!!'"></span>
+   <br>${nullData}?:'데이터가 없습니다.'=><span th:text="${nullData}?:'데이터가 없습니다.!!!!!!'"></span></li>
+
+    <li>
+        ${data}?:_=><span th:text="${data}?:_">데이터가 없습니다.</span><br>
+        ${nullData}?:_=><span th:text="${nullDdata}?:_">데이터가 없습니다.</span>
+    </li>
+</ul>
+<h1>URI 경로 표현 : @{}</h1>
+<ul>
+    <li><span th:text="@{/dept/list}"></span></li>
+    <li><span th:text="@{/dept/list(searchType=${'dname'}, keyword=${'AC'})}"></span></li>
+    <li><span th:text="@{/dept/list/{param1}(param1=${'123456789'})}"></span></li>
+
+    <li><a th:href="@{/dept/list}">LINK1</a></li>
+    <li><a th:href="@{/dept/list(searchType=${'dname'}, keyword=${'AC'})}">LINK2</a></li>
+    <li><a th:href="@{/dept/list/{param1}(param1=${'링크 주소 파람으로 받아서 넣어줌'})}">LINK3</a></li>
+</ul>
+
+
+<h1>LocalDateTime 객체의 포맷팅</h1>
+<ul>
+    <li>현재 시간 출력 : <span th:text="${localDateTiem}"></span></li>
+    <li>yyyy-MM-dd HH:mm:ss : <span th:text="${#temporals.format(localDateTiem,'yyyy. MM. dd HH:mm:ss ')}"></span></li>
+    <li>yyyy-MM-dd/a hh:mm:<span th:text="${#temporals.format(localDateTiem,'yyyy-MM-dd/a hh:mm')}"></span></li>
+
+</ul>
+</body>
+</html>

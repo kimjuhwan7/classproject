@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ex1</title>
+</head>
+<body>
+<h1>param, session의 속성</h1>
+<ul>
+    <li>요청 파라미터 type=<span th:text="${param.type}"></span></li>
+    <li>세션의 속성 값 loginData : <span th:text="${session.loginData}"></span></li>
+</ul>
+
+
+<!--/*<h1>지역 변수 선언과 활용</h1>-->
+<!--<div th:with="item=${deptList[1]}"></div>-->
+<!--<ul>-->
+<!--    <li>부서번호 : <span th:text="${item.deptno}"></span></li>-->
+<!--    <li>부서이름 : <span th:text="${item.dname}"></span></li>-->
+<!--    <li>부서위치 : <span th:text="${item.loc}"></span></li>-->
+<!--</ul>*/-->
+
+<h1>Map 객체 접근 </h1>
+<ul>
+    <li>10번 부서 : [[${deptMap['1']}]]</li>
+    <li>30번 부서 : [[${deptMap['4']}]]</li>
+    <li>10번 부서의 이름 : [[${deptMap['1'].dname}]]</li>
+    <li>30번 부서의 이름 : [[${deptMap['4'].dname}]]</li>
+    <li>30번 부서의 이름 : <span th:text="${deptMap['1'].dname}"></span></li>
+</ul>
+
+<h1>List 객체 접근 </h1>
+<ul>
+    <li>첫번째 부서 : [[${deptList[0]}]]</li>
+    <li>첫번째 부서의 이름 : [[${deptList[0].dname}]]</li>
+    <li>첫번째 부서의 이름 : <span th:text="${deptList[0].dname}"></span></li>
+</ul>
+<h1>객체 출력하는 표현식</h1>
+<ul>
+    <li>부서이름 : [[${dept.dname}]]</li>
+    <li th:text="${dept.dname}"></li>
+    <li>부서이름 : <span th:text="${dept.dname}"></span></li>
+    <li th:text="${'부서이름'+dept.dname}"></li>
+</ul>
+</body>
+</html>
