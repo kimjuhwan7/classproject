@@ -18,10 +18,10 @@ public class IndexController {
         return "INDEX";
     }
 
-    @GetMapping("/hello")
+    @GetMapping("/hello1")
     public String hello(Model model) {
         model.addAttribute("msg","Hello~ Spring boot");
-        return "hello"; //templates/hello.html
+        return "hello1"; //templates/hello.html
     }
 
 }

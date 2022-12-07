@@ -5,20 +5,63 @@
     <title>ex1</title>
 </head>
 <body>
+<h1>모듈화 : insert</h1>
+<div th:insert="fragment/footer :: copy"></div>
+<div th:insert="~{fragment/footer :: copy}"></div>
+
+<div th:replace="fragment/footer :: copy"></div>
+<div th:replace="fragment/footer :: copyParam('전화번호 : 010-1111-1112',' 이메일 : @gmail.com')"></div>
+
+<h1>반복문</h1>
+<h3>부서 리스트</h3>
+<table border="1">
+    <tr>
+
+        <th>부서번호</th>
+        <th>부서이름</th>
+        <th>부서위치</th>
+    </tr>
+    <th:block th:each="dept:${deptList}">
+        <tr>
+            <td th:text="*{dept.deptno}"></td>
+            <td>[(${dept.dname})]</td>
+            <td th:text="${dept.loc}"></td>
+        </tr>
+    </th:block>
+</table>
+
+<table border="1">
+    <tr>
+        <th>index</th>
+        <th>count</th>
+        <th>부서번호</th>
+        <th>부서이름</th>
+        <th>부서위치</th>
+    </tr>
+    <tr th:each="dept:${deptList}" th:object="${dept}">
+        <td th:text="${deptStat.index}"></td>
+        <td th:text="${deptStat.count}"></td>
+        <td th:text="*{deptno}"></td>
+        <td>[(${dept.dname})]</td>
+        <td th:text="${dept.loc}"></td>
+    </tr>
+</table>
+
+
 <h1>param, session의 속성</h1>
 <ul>
     <li>요청 파라미터 type=<span th:text="${param.type}"></span></li>
     <li>세션의 속성 값 loginData : <span th:text="${session.loginData}"></span></li>
 </ul>
 
-
-<!--/*<h1>지역 변수 선언과 활용</h1>-->
-<!--<div th:with="item=${deptList[1]}"></div>-->
-<!--<ul>-->
-<!--    <li>부서번호 : <span th:text="${item.deptno}"></span></li>-->
-<!--    <li>부서이름 : <span th:text="${item.dname}"></span></li>-->
-<!--    <li>부서위치 : <span th:text="${item.loc}"></span></li>-->
-<!--</ul>*/-->
+<h1>지역 변수 선언과 활용</h1>
+<div th:with="item=${deptList[1]}">
+    <ul>
+        <li>부서번호 : <span th:text="${item.deptno}"></span></li>
+        <li>부서이름 : <span th:text="${item.dname}"></span></li>
+        <li>부서위치 : <span th:text="${item.loc}"></span></li>
+    </ul>
+</div>
 
 <h1>Map 객체 접근 </h1>
 <ul>
@@ -42,5 +85,23 @@
     <li>부서이름 : <span th:text="${dept.dname}"></span></li>
     <li th:text="${'부서이름'+dept.dname}"></li>
 </ul>
+<script th:inline="javascript">
+    let deptno = [[${deptList[0].deptno}]];
+    let dname = [[${deptList[0].dname}]];
+    let loc = [[${deptList[0].loc}]];
+
+    let dept = '[[${dept}]]';
+    let deptList = '[[${deptList}]]';
+
+    let deptObj = JSON.parse(dept);
+    let deptListObj = JSON.parse(deptList);
+
+    console.log('deptno', deptno)
+    console.log('dname', dname)
+    console.log('loc', loc)
+
+    console.log('deptObj', deptObj)
+    console.log('deptListObj', deptListObj)
+</script>
 </body>
 </html>

@@ -14,6 +14,7 @@ public class ExampleController2 {
     @GetMapping("/ex1_1")
     public String ex1(Model model) {
 
+
         model.addAttribute("localDateTiem", LocalDateTime.now());
 
         model.addAttribute("data", "DATA123");

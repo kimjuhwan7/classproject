@@ -3,17 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .title {
+            color: red;
+            font-weight: bold;
+            font-style: italic;
+        }
+    </style>
 </head>
 <body>
+<h1>조건식</h1>
+<div th:with="age=${30}">
+    <ul>
+        <li><span th:text="${age}"></span></li>
+        <li><span th:text="성년" th:if="${age > 19}"></span>
+            <span th:text="미성년" th:unless="${age > 19}"></span></li>
+            <li th:switch="${age}">
+                <span th:case="15">15살</span>
+                <span th:case="20">20살</span>
+                <span th:case="25">25살</span>
+                <span th:case="*">기타</span>
+            </li>
+    </ul>
+
+
+    <!--분기 / 반복-->
+    <th:block th:if="${age>19}">
+        <div>성인입니다.</div>
+        <div>음주가 가능합니다.</div>
+        <div>술집에는 출입이 불가합니다.</div>
+    </th:block>
+</div>
+
+<h1>속성의 추가/변경</h1>
+<ul>
+    <li>안녕하세요</li>
+    <li><span th:class="${'title'}">안녕하세요</span></li>
+    <li><span class="sub" th:class="${'title'}">안녕하세요</span></li>
+    <li><span class="sub" th:attrappend="class=${' title'}">안녕하세요</span></li>
+    <li><span class="sub" th:attrprepend="class=${'title '}">안녕하세요</span></li>
+    <li><span class="sub" th:classappend="${'title'}">안녕하세요</span></li>
+    <li> checked</li>
+    <li><input type="checkbox" name="aaa" th:checked="true"></li>
+    <li><input type="checkbox" name="aaa" th:checked="false"></li>
+    <li><input type="checkbox" name="aaa" th:checked="${data}"></li>
+</ul>
 
 <h1>연산자</h1>
-
 <ul>
     <li>10+20 = <span th:text="${10+20}"></span></li>
     <li>10>20 = <span th:text="${10>20}"></span></li>
     <li>10 % 2 ==0? 짝수 : 홀수 <span th:text="${10%2==0?'짝 수':'홀 수'}"></span></li>
     <li>${data}?:'데이터가 없습니다.'=><span th:text="${data}?:'데이터가 없습니다.!!!!!'"></span>
-   <br>${nullData}?:'데이터가 없습니다.'=><span th:text="${nullData}?:'데이터가 없습니다.!!!!!!'"></span></li>
+        <br>${nullData}?:'데이터가 없습니다.'=><span th:text="${nullData}?:'데이터가 없습니다.!!!!!!'"></span></li>
 
     <li>
         ${data}?:_=><span th:text="${data}?:_">데이터가 없습니다.</span><br>
