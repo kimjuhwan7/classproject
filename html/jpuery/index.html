@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-1.12.4.js"
+      integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      //window.onload = () = >{}
+      //$() ->팩토리 함수 : jquery 객체를 생성해주는 메소드
+      // document -> jquery 객체로 생성
+      // $(document).ready(function(){
+      //         console.log('onload: jquery ready method');
+      // })
+
+      // $().ready(()=>{
+      //     alert('onload!!!')
+      // })
+      ////////////////////////////////////////////////////////
+
+      $().ready(() => {
+        //선택자를 이용한 문서객체 캐스팅
+        /* let h2 =  document.querySelector('.bg-black')
+            
+            $('*').css('color','red').css('background-color','#333');
+            $('.bg-black').css('background-color', '#000')
+            $('#pick').css('background-color', 'yellow'); */
+        // document.querySelector(input[type=text]).value='안녕!!!'
+        // $('input[type=text]').val('안녕하세요');
+        // let val1 = document.querySelector('input[type=text]').value
+        // let val2 = $('input:text').val()
+        // console.log('val1',val1);
+        // console.log('val2',val2);
+        //5초 후에 선택된 항목의 값을 확인
+        // setTimeout(()=>{
+        //     let selectVal = $('select > option:selected').val()
+        //     console.log('selectVal',selectVal);
+        //     let chechVal = $('input:checkbox:checked').val()
+        //     console.log('chechVal',chechVal);
+        // },5000)
+        // $('table tr:odd').css('background-color','green')
+        // $('table tr:even').css('background-color','yellow')
+        // $('table tr:first').css('background-color','black').css('color','white')
+        // $('table tr:last').css('background-color','gray').css('color','blue')
+        //////////////////////////////////////////////////////////////////////////
+        // $('tr').first().css('color','blue')
+        // $('tr').last().css('color','red')
+        // $('tr').eq(3).css('color','green')
+        // 배열 생성
+        /*  let links = [
+          { name: "네이버", url: "http://www.naver.com" },
+          { name: "다음", url: "http://www.naver.com" },
+          { name: "카카오", url: "http://www.kakao.com" },
+        ];
+
+        let html = "";
+        $.each(links, (index, item) => {
+          console.log(index, item);
+
+          html += '<a href="' + item.url + '">' + item.name + '</a>\n';
+        });
+
+        console.log(html);
+
+        //html() => innerHtml 속성 처리와 같다!
+        //get
+        let bodyVal =$('body').html()
+
+        //set
+        $('#links').html(html) */
+        ////////////////////////////////////////////////////////////////////
+        /* 
+        $('h1').each((index, item) => {
+            // ${item}
+            //get
+            console.log(index,item.innerHTML);
+
+            //jquery get
+            console.log(index,$(item).html());
+
+            $(item).css('color','red')
+        }); */
+
+        /*  $("h1")
+          .filter((index, item) => {
+            return index % 3 == 0;
+          })
+          .css("color", "blue"); */
+
+        let xml = "";
+        xml += "<links>";
+        xml += " <link>";
+        xml += " <name>네이버</name>";
+        xml += " <url>http://www.naver.com</url>";
+        xml += " </link>";
+        xml += " <link>";
+        xml += " <name>다음</name>";
+        xml += " <url>http://www.daum.net</url>";
+        xml += " </link>";
+        xml += " <link>";
+        xml += " <name>카카오</name>";
+        xml += " <url>http://www.kakao.com</url>";
+        xml += " </link>";
+        xml += "</links>";
+
+        //xml 형식을 가지는 문자열을 xml문서 객체로 변경
+        let xmlDoc = $.parseXML(xml);
+
+        let html = "";
+
+        //xmlDocument -> jQuery : find(태그 이름) -> 태그 검색
+        $(xmlDoc)
+          .find("link")
+          .each((index, item) => {
+            // $(this) => <link>
+            let name = $(item).find("name").text();
+            let url = $(item).find("url").text();
+
+            console.log(name, url);
+
+            html += "<div>";
+            html += "<h2>" + name + "</h2>";
+            html += "<p>" + url + "</p>";
+            html += "</div>";
+          });
+
+          $('body').html(html)
+      });
+    </script>
+  </head>
+
+  <body>
+    <h1>header - 0</h1>
+    <h1>header - 1</h1>
+    <h1>header - 2</h1>
+    <h1>header - 3</h1>
+    <h1>header - 4</h1>
+
+    <!-- <div id="links"></div> -->
+
+    <!-- <table border="1">
+    <tr>
+        <td>thead 1</td>
+        <td>thead 2</td>
+    </tr>
+    <tr>
+        <td>tbody 1-1</td>
+        <td>tbody 1-2</td>
+    </tr>
+    <tr>
+        <td>tbody 2-1</td>
+        <td>tbody 2-2</td>
+    </tr>
+    <tr>
+        <td>tbody 3-1</td>
+        <td>tbody 3-2</td>
+    </tr>
+    <tr>
+        <td>footer 1</td>
+        <td>footer 2</td>
+    </tr>
+</table> -->
+
+    <!--
+    <select>
+        <option>2022</option>
+        <option>2021</option>
+        <option>2020</option>
+        <option>2019</option>
+    </select>
+
+    <input type="checkbox"> -->
+
+    <!-- <input type="text"> -->
+
+    <!-- <h2>header-1</h2>
+    <h2 class="bg-black">header-2</h2>
+    <h2 id="pick">header-3</h2>
+    <h2>header-4</h2>
+    <h2 class="bg-black">header-5</h2> -->
+  </body>
+</html>

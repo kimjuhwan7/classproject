@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1 {
+        border: 1px solid #000;
+      }
+      .reverse {
+        background-color: aqua;
+        color: blue;
+      }
+      div {
+        border: 1px solid #000;
+      }
+    </style>
+    <script
+      src="https://code.jquery.com/jquery-1.12.4.js"
+      integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $().ready(function () {
+        //this=>이벤트가 발생한 엘리먼트를 가르킨다!
+        /* $("h1").on("click", function (e) {
+          $(this).html(function (index, oldHtml) {
+            return oldHtml + "+";
+          });
+        });
+
+        $("h1").on({
+          mouseenter: function () {
+            $(this).addClass("reverse");
+          },
+          mouseleave: function () {
+            $(this).removeClass("reverse");
+          },
+        }); */
+        /*  $("div").click(function (e) {
+          let h3 = $("h3",this).text();
+          let p = $("p",this).text();
+          console.log(h3, p);
+        }); */
+        /* 
+        $("a").click(function (e) {
+          var e = e || window.event;
+          // 기본 이벤트 제거!
+          e.preventDefault();
+
+          console.log("a click!!!");
+        });
+
+        $("form").submit(function (e) {
+          console.log("form submit click!!!");
+
+          let uid2 = $("#uid");
+          let uid = $("#uid").val();
+
+          if (uid == null || uid.length < 1) {
+            alert("공백 불가");
+            uid2.focus()
+            return false;
+          }
+     
+        }); */
+        /* 
+        $("h1").click(function () {
+          var length = $("h1").length;
+          var oldHtml = $(this).html();
+          $("#wrap").append("<h1>" + length + "-" + oldHtml + "</h1>");
+        }); */
+
+        /*    $("#wrap").on('click','h1',function () {
+          var length = $("h1").length;
+          var oldHtml = $(this).html();
+          $("#wrap").append("<h1>" + length + "-" + oldHtml + "</h1>");
+        }); */
+
+        $("textarea").keyup(function () {
+          var cnt = $(this).val().length;
+          var remain = 150 - cnt;
+
+          if (remain < 0) {
+            alert("150자 까지만 작성이 가능합니다.");
+            var str = $(this).val().substr(0,150);
+            $(this).val(str);
+            $('span').text('150');
+            return false
+          }
+
+          console.log(cnt, remain);
+          $("span").text(cnt);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <textarea cols="50" rows="5"></textarea>
+    <span>0</span>/150
+
+    <!-- <div id="wrap">
+      <h1>header</h1>
+    </div>
+ -->
+    <!-- 
+    <form action="http://www.naver.com">
+      <input type="text" id="uid" name="uidFS" />
+      <input type="submit" value="전송" />
+    </form>
+
+    <a href="http://www.naver.com">Naver</a>
+ -->
+    <!-- <div>
+      <h3>header 1</h3>
+      <p>paragraph1</p>
+      <input type="hidden" value="1" />
+    </div>
+    <div>
+      <h3>header 2</h3>
+      <p>paragraph2</p>
+    </div>
+    <div>
+      <h3>header 3</h3>
+      <p>paragraph3</p>
+    </div> -->
+
+    <!-- <h1>header-0</h1>
+    <h1>header-1</h1>
+    <h1>header-2</h1> -->
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-1.12.4.js"
+      integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $().ready(function () {
+        /* 
+    $('<h1>1</h1>').appendTo('body')
+
+    $('body').append('<h2>2</h2>')
+
+    $('<h3>3</h3>').prependTo('body')
+
+    $('body').prepend('<h4>4</h4>')
+ */
+        /* $("<h1></h1>").html("hello!!!").appendTo("body");
+        $("<h1>DOM h1 create!!!</h1>").appendTo("body");
+
+        $("<img>").appendTo("body");
+        $("<img>")
+          .attr("src", "../html5/고양이손.jpg")
+          .attr("width", 200)
+          .appendTo("body"); */
+        ///////////////////////////////////////////////////////////////
+        /* let html1 = '<a href="#">link</a>';
+        let html2 = "<p>TEST</p>";
+        let html3 = "<div>DIV Tag</div>";
+
+        $("body").append(html1, html2, html3, "<hr>"); */
+        ///////////////////////////////////////////////////////////////
+
+        let links = [
+          { name: "네이버", url: "http://www.naver.com" },
+          { name: "다음", url: "http://www.naver.com" },
+          { name: "카카오", url: "http://www.kakao.com" },
+        ];
+
+        // $.each(links, function (index, item) {
+        //   $("#list").append(function () {
+        //     let html =
+        //       '<h3><a href="' + item.url + '">' + item.name + "</a></h3>";
+        //     return html;
+        //   });
+        // });
+        /*         $('#list').append(function(){
+        })
+ */
+        $("div").append(function (index) {
+          return (
+            '<h3><a href="' + links[index].url + '">' + links[index].name + '</a></h3>'
+          );
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <!-- <div id="list"></div> -->
+  </body>
+</html>
