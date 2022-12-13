@@ -161,24 +161,17 @@
 
 <script>
 
-    let replyList;
+
     let editModal;
 
     $().ready(function () {
 
         // 댓글 리스트 출력 영역 캐스팅
-        replyList = document.querySelector('#replyList')
-        // 댓글 작성 버튼
-        const btn_reply = $('#btn_reply')
-        // 댓글 수정 버튼
-        const btn_edit = $('#btn_edit')
+
+        $('#btn_reply').click(insertReply);
+        $('#btn_edit').click(editReply);
 
         editModal = new bootstrap.Modal('#replyEditModal')
-
-
-        // 버튼 이벤트 등록
-        // btn_reply.addEventListener('click', insertReply)
-        // btn_edit.addEventListener('click', editReply)
 
 
         // 페이지가 로드되면 리스트를 출력
@@ -187,27 +180,33 @@
     })
 
     function setList() {
-        // 비동기 통신 :댓글 리스트
-        $.getJSON('/reply/' + bno, function (data) {
-            $.each(data, function (index, reply) {
-                const newTR = document.createElement('tr')
-                let html = '<td class="col-2">' + reply.replyer + '</td>'
-                html += '<td class="col">' + reply.reply + '</td>'
-                html += '<td class="col-2">' + reply.replydate + '</td>'
-                html += '<td class="col-2"> ' +
-                    '<a href="javascript:showEditModal(' + reply.rno + ')" class="badge bg-warning text-decoration-none">수정</a> ' +
-                    '<a href="javascript:deleteReply(' + reply.rno + ')" class="badge bg-danger text-decoration-none">삭제</a> ' +
-                    '</td>'
-                newTR.innerHTML = html
-                newTR.setAttribute('class', 'fs-6 text-center')
-                newTR.setAttribute('tr-index', reply.rno)
-                // 부모 태그에 요소 추가
-                replyList.prepend(newTR)
-            })
-        })
+        $.ajax({
+            url: '/reply/' + bno,
+            type: 'GET',
+            dataType: "json",
+            contentType: "application/json",
+            success: function (data) {
+                $.each(data, function (index, reply) {
+                    let html = '<td class="col-2">' + reply.replyer + '</td>'
+                    html += '<td class="col">' + reply.reply + '</td>'
+                    html += '<td class="col-2">' + reply.replydate + '</td>'
+                    html += '<td class="col-2"> ' +
+                        '<a href="javascript:showEditModal(' + reply.rno + ')" class="badge bg-warning text-decoration-none">수정</a> ' +
+                        '<a href="javascript:deleteReply(' + reply.rno + ')" class="badge bg-danger text-decoration-none">삭제</a> ' +
+                        '</td>'
+                    $('<tr></tr>').html(html).addClass('fs-6 text-center').attr('tr-index', reply.rno).appendTo($('#replyList'))
+
+                })
+            },
+            error: function (request, status, error) {
+                console.log(error);
+            }
+        });
+
+
     }
 
-    $('#btn_reply').on('click', function () {
+    function insertReply() {
         // 서버로 전송할 payload
         const payload = {
             bno: bno,
@@ -221,50 +220,20 @@
             dataType: "json",
             contentType: "application/json",
             data: JSON.stringify(payload),
-            success: function (data) {
-
-                const reply = data
-                const newTR = document.createElement('tr')
-                let html = '<td class="col-2">' + reply.replyer + '</td>'
-                html += '<td class="col">' + reply.reply + '</td>'
-                html += '<td class="col-2">' + reply.replydate + '</td>'
-                html += '<td class="col-2"> ' +
+            success: function (reply) {
+                let html2 = '<td class="col-2">' + reply.replyer + '</td>'
+                html2 += '<td class="col">' + reply.reply + '</td>'
+                html2 += '<td class="col-2">' + reply.replydate + '</td>'
+                html2 += '<td class="col-2"> ' +
                     '<a href="javascript:showEditModal(' + reply.rno + ')" class="badge bg-warning text-decoration-none">수정</a> ' +
                     '<a href="javascript:deleteReply(' + reply.rno + ')" class="badge bg-danger text-decoration-none">삭제</a> ' +
                     '</td>'
-                newTR.innerHTML = html
-                newTR.setAttribute('class', 'fs-6 text-center')
-                newTR.setAttribute('tr-index', reply.rno)
-                // 부모 태그에 요소 추가
-                replyList.prepend(newTR)
-                document.querySelector("#reply").value = ''
-                document.querySelector("#replyer").value = ''
+                $('<tr></tr>').html(html2).addClass('fs-6 text-center').attr('tr-index', reply.rno).appendTo($('#replyList'))
+
             },
 
         });
-
-        /* axios.post('/reply', payload)
-             .then(res => {
-                 const reply = res.data
-                 // replyList 영역에 새로운 tr을 추가
-                 const newTR = document.createElement('tr')
-                 let html = '<td class="col-2">' + reply.replyer + '</td>'
-                 html += '<td class="col">' + reply.reply + '</td>'
-                 html += '<td class="col-2">' + reply.replydate + '</td>'
-                 html += '<td class="col-2"> ' +
-                     '<a href="javascript:showEditModal(' + reply.rno + ')" class="badge bg-warning text-decoration-none">수정</a> ' +
-                     '<a href="javascript:deleteReply(' + reply.rno + ')" class="badge bg-danger text-decoration-none">삭제</a> ' +
-                     '</td>'
-                 newTR.innerHTML = html
-                 newTR.setAttribute('class', 'fs-6 text-center')
-                 newTR.setAttribute('tr-index', reply.rno)
-                 // 부모 태그에 요소 추가
-                 replyList.appendChild(newTR)
-                 document.querySelector("#reply").value = ''
-                 document.querySelector("#replyer").value = ''
-             })
-             .catch(err => console.log(err))*/
-    });
+    };
 
     function deleteReply(rno) {
 
@@ -272,17 +241,18 @@
             return;
         }
 
-        console.log('rno >>> ', rno)
-
         $.ajax({
             url: '/reply/' + rno,
-            type: 'Delete',
+            type: 'DELETE',
+            async: true,
+            contentType: 'application/json',
             success: function (data) {
                 if (data == 1) {
                     // 화면에서 tr-index == rno 행을삭제
                     // 삭제 대상 행
-                    const delTR = document.querySelector('tr[tr-index="' + rno + '"]')
-                    replyList.removeChild(delTR)
+
+                    $('tr[tr-index="' + rno + '"]').remove();
+
                     alert('삭제되었습니다.')
                 } else {
                     alert('삭제할 대상이 존재하지 않습니다.')
@@ -302,7 +272,7 @@
 
         editModal.show()
 
-        const editTD = document.querySelectorAll('tr[tr-index="' + rno + '"]>td')
+        const editTD = $('tr[tr-index="' + rno + '"]>td')
 
         //editTD[0].textContent='변경된 데이터'
 
@@ -311,11 +281,10 @@
         console.log(editTD[2].textContent)
 
 
-        document.querySelector('#erno').value = rno
-        document.querySelector('#ereplyer').value = editTD[0].textContent
-        document.querySelector('#ereply').value = editTD[1].textContent
-        document.querySelector('#ereplydate').value = editTD[2].textContent
-
+        $('#erno').val(rno)
+        $('#ereplyer').val(editTD[0].textContent)
+        $('#ereply').val(editTD[1].textContent)
+        $('#ereplydate').val(editTD[2].textContent)
 
     }
 
@@ -324,27 +293,23 @@
         // put => 전체 데이터의 변경, 모든 데이터를 서버로 전송, 값이 없는 경우 기본값으로 저장
         const payload = {
             bno: bno,
-            rno: document.querySelector('#erno').value,
-            reply: document.querySelector("#ereply").value,
-            replyer: document.querySelector("#ereplyer").value,
-            replydate: document.querySelector('#ereplydate').value
+            rno: $('#erno').val(),
+            reply: $('#ereply').val(),
+            replyer: $('#ereplyer').val(),
+            replydate: $('#ereplydate').val()
+
         }
-
-        console.log(payload)
-
-        axios.put('/reply/' + payload.rno, payload)
-            .then(res => {
-                console.log('put -> response ', res.data)
-
-                const editTD = document.querySelectorAll('tr[tr-index="' + payload.rno + '"]>td')
-                editTD[1].textContent = payload.reply
-
+        $.ajax({
+            url: '/reply/' + payload.rno,
+            type: 'PUT',
+            data: JSON.stringify(payload),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function () {
+                $('tr[tr-index="' + payload.rno + '"]>td')[1].textContent =payload.reply
                 editModal.hide()
-
-            })
-            .catch(err => console.log(err))
-
-
+            }
+        })
     }
 
 
