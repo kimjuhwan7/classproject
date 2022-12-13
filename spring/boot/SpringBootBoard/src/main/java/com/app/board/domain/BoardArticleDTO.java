@@ -1,6 +1,5 @@
 package com.app.board.domain;
 
-
 import lombok.*;
 
 import java.time.LocalDate;
@@ -11,16 +10,14 @@ import java.time.LocalDate;
 @Setter
 @Builder
 @ToString
-public class BoardDTO {
+public class BoardArticleDTO {
 
     private int bno;
     private String title;
+    private int replycnt;
     private String content;
     private String writer;
     private String photo;
     private LocalDate regdate;
     private LocalDate updatedate;
-
-
-
 }

@@ -20,9 +20,12 @@ public class BoardViewController {
             @RequestParam("bno") int bno,
             @RequestParam("p") int p,
             Model model
-    ) {
-        model.addAttribute("curretPageNum", p);
+
+    ){
+        model.addAttribute("currentPageNum", p);
         model.addAttribute("boardView", boardViewService.selectBoardDTO(bno));
     }
+
+
 
 }

@@ -13,11 +13,12 @@ public class BoardListController {
     @Autowired
     private BoardListService boardListService;
 
-    @GetMapping("/board/list")// /board/list?p=1
-    public void getList(@RequestParam(value = "p", defaultValue = "1") int pageNum, Model model
-    ) {
+    @GetMapping("/board/list")   // /board/list
+    public void getList(
+            @RequestParam(value = "p", defaultValue = "1") int pageNum,
+            Model model
+    ){
         model.addAttribute("boardList", boardListService.getList(pageNum));
         model.addAttribute("listPage", boardListService.getPage(pageNum));
-
     }
 }

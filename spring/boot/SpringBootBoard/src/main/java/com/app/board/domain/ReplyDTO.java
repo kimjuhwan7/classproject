@@ -1,5 +1,6 @@
 package com.app.board.domain;
 
+
 import lombok.*;
 
 @AllArgsConstructor
@@ -16,4 +17,5 @@ public class ReplyDTO {
     private String replyer;
     private String replydate;
     private String updatedate;
+
 }

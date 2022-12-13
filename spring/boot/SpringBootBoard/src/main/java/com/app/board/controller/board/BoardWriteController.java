@@ -11,28 +11,31 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.io.File;
 
-@Log4j2
 @Controller
 @RequestMapping("/board/write")
+@Log4j2
 public class BoardWriteController {
 
     @Autowired
     private BoardWriteService boardWriteService;
 
-
     @GetMapping
-    public void writeForm() {
+    public void writeForm(){
     }
 
     @PostMapping
-    public String writer(BoardWriteRequest boardWriteRequest) {
-        log.info("보더" + boardWriteRequest);
+    public String write(
+            BoardWriteRequest boardWriteRequest
+    ){
 
-        /*특정경로파일 가져온다*/
+        log.info(">>>>>>>>>>>>>>>>> " + boardWriteRequest);
+
         String absolutePath = new File("").getAbsolutePath();
-        log.info(">>>>>>>path : " + absolutePath);
+        log.info(">>> path : " + absolutePath);
 
         boardWriteService.write(boardWriteRequest);
+
+
         return "redirect:/board/list";
     }
 

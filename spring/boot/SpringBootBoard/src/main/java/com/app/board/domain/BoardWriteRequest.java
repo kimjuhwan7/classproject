@@ -1,14 +1,13 @@
 package com.app.board.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.web.multipart.MultipartFile;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
+@ToString
 @Builder
 public class BoardWriteRequest {
 
@@ -18,11 +17,12 @@ public class BoardWriteRequest {
     private MultipartFile formFile;
 
 
-    public BoardDTO toBoardDTO() {
+    public BoardDTO toBoardDTO(){
         return BoardDTO.builder()
                 .title(title)
                 .content(content)
                 .writer(writer)
                 .build();
     }
+
 }

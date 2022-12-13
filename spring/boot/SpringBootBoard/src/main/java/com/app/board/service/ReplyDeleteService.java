@@ -10,8 +10,7 @@ public class ReplyDeleteService {
     @Autowired
     private ReplyMapper replyMapper;
 
-
-    public int deleteByRno(int rno) {
+    public int deleteByRno(int rno){
         return replyMapper.deleteByRno(rno);
     }
 }

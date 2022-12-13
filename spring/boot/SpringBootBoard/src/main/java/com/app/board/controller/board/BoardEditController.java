@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-@Log4j2
 @Controller
 @RequestMapping("/board/edit")
+@Log4j2
 public class BoardEditController {
 
     @Autowired
@@ -24,29 +24,31 @@ public class BoardEditController {
     @Autowired
     private BoardEditService boardEditService;
 
-    @GetMapping()
-    public void editForm(
+    @GetMapping
+    public void edtiForm(
             @RequestParam("bno") int bno,
             @RequestParam("p") int p,
             Model model
-    ) {
+    ){
         model.addAttribute("board", boardViewService.selectBoardDTO(bno));
         model.addAttribute("curPageNum", p);
     }
 
+
     @PostMapping
-    public String edit(BoardEditRequest boardEditRequest,
-                       RedirectAttributes redirectAttributes
-    ) {
+    public String edit(
+            BoardEditRequest boardEditRequest,
+            RedirectAttributes redirectAttributes
+
+    ){
         log.info(boardEditRequest);
-        log.info("p값 확인>>>>>>>>>>" + boardEditRequest.getBno());
 
         redirectAttributes.addAttribute("bno", boardEditRequest.getBno());
-        redirectAttributes.addAttribute("p", boardEditRequest.getCurpageNum());
-
+        redirectAttributes.addAttribute("p", boardEditRequest.getCurPageNum());
 
         boardEditService.edit(boardEditRequest);
 
         return "redirect:/board/view";
+
     }
 }

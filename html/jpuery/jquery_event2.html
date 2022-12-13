@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-1.12.4.js"
+      integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      div,
+      p,
+      a {
+        border: 1px solid #000;
+        padding: 10px;
+      }
+      p {
+        width: 50%;
+      }
+    </style>
+    <script>
+      $(document).ready(function () {
+        /*  $("div").click(function () {
+          console.log("div click!");
+        });
+        $("p").click(function () {
+          console.log("p click!");
+          return false;
+        });
+        $("a").click(function (e) {
+          e = e || window.event;
+
+          // 기본 이벤트 제거
+          //   e.preventDefault();
+
+          //   if (e.stopPropagation) {
+          //     e.stopPropagation();
+          //   }
+          console.log("a click!");
+
+          return false;
+        }); */
+        $("#allCheck").change(function () {
+          console.log("checked 상태", this.checked);
+          if (this.checked) {
+            $("#checkItem").children().prop("checked", true);
+          }else{
+            $("#checkItem").children().prop("checked", false);
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <input type="checkbox" id="allCheck" />
+    <label for="allCheck">all 전체 동의</label>
+
+    <div id="checkItem">
+      <input type="checkbox" id="" /><label>a Type</label>
+      <input type="checkbox" id="" /><label>b Type</label>
+      <input type="checkbox" id="" /><label>c Type</label>
+    </div>
+
+    <!--     <div>
+      <p><a href="https://www.naver.com">link</a></p>
+    </div>
+ -->
+  </body>
+</html>

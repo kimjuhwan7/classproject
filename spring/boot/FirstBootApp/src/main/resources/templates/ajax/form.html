@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/js/app.js"></script>
+    <script
+            src="https://code.jquery.com/jquery-1.12.4.js"
+            integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+            crossorigin="anonymous"
+    ></script>
+    <script>
+        $(document).ready(function () {
+            /*$.ajax('/data.html', {
+                success: function (data) {
+                    console.log(data)
+                    $('body').append(data);
+                }
+            })*/
+            /*$.ajax({
+                url: '/data.html',
+                success : function (data){
+                    console.log(data)
+                    $('body').append(data)
+                }
+            })*/
+            // /parameter get name, price
+            /* $('#btnSubmit').click(function () {
+                 let name = $('#name').val()
+                 let price = $('#price').val()
+
+                 $.ajax({
+                     url: '/parameter',
+                     type: 'get',
+                     data: {name: name, price: price},
+                     success: function (data) {
+                         console.log('통신결과 ', data)
+                         $('body').append('<h3>' + data + '</h3>')
+                     }
+                 })
+             })*/
+            /*$.get('/data.html',function (data){
+                $('body').html(data)
+            })*/
+            /*$.get('/parameter', {name: '우유', price: 3000}, function (data) {
+                $('body').html(data)
+            })*/
+            /*    $.get('/data.json',function (data){
+                    console.log(data)
+                    $.each(data, function (index,item){
+                        $('body').append('<h2>'+item.name+':'+item.price+'</h2>');
+                    })
+                },'json')*/
+
+            /* $.getJSON('/data.json',function (data){
+                 console.log(data)
+                 $.each(data, function (index,item){
+                     $('body').append('<h2>'+item.name+':'+item.price+'</h2>');
+                 })
+             })*/
+
+            /*$('div').load('/data.html')*/
+
+            /*$.ajax({
+                url: '/data.xml',
+                success: function (data) {
+                    $(data).find('product').each(function () {
+                        let name = $(this).find('name').text();
+                        let price = $(this).find('price').text();
+
+                        $('div').append('<h3>' + name + ':' + price + '</h3>');
+                    })
+                }
+            })*/
+            $('#myForm').submit(function () {
+                let param1 = $(this).serialize();
+                let param2 = $(this).serializeArray();
+
+                console.log('param1', param1)
+                console.log('param2', param2)
+
+                $.get('/parameter', param2, function (data) {
+                    $('body').html(data)
+                })
+                return false
+            })
+
+        })
+    </script>
+</head>
+<body>
+<form id="myForm" method="post">
+    이름 <input type="text" name="name" id="name">
+    가격 <input type="text" name="price" id="price">
+    <input type="submit" id="btnSubmit" value="전송">
+</form>
+<!--<div></div>-->
+<!--
+이름 <input type="text" name="name" id="name">
+가격 <input type="text" name="price" id="price">
+<input type="submit" id="btnSubmit" value="전송">
+-->
+
+</body>
+</html>

@@ -5,16 +5,14 @@ import com.app.board.mapper.ReplyMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
-public class ReplyListService {
+public class ReplyEditService {
 
     @Autowired
     private ReplyMapper replyMapper;
 
-    public List<ReplyDTO> selectAll(int bno){
-        return replyMapper.selectAll(bno);
+    public int updateReply(ReplyDTO replyDTO){
+        return replyMapper.updateReply(replyDTO);
     }
 
 }

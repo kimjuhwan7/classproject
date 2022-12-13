@@ -7,11 +7,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ReplyReadService {
+
     @Autowired
     private ReplyMapper replyMapper;
-
 
     public ReplyDTO selectByRno(int rno){
         return replyMapper.selectByRno(rno);
     }
+
+
 }
