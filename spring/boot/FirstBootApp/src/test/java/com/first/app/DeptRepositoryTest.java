@@ -30,7 +30,7 @@ public class DeptRepositoryTest {
         log.info(":::::::::::::::::::::::::::::::: ::::::::::::::::::::::::::::::::");
 
         //  정렬 기준 설정
-        Sort sort = Sort.by(Sort.Direction.DESC, "deptno");
+        Sort sort = Sort.by(Sort.Direction.DESC, "dname");
         List<Dept> list2 = deptRepository.findAll(sort);
         for (Dept dept : list2) {
             log.info(dept);
@@ -78,17 +78,33 @@ public class DeptRepositoryTest {
 
     @Test
     public void JpqlMethodTest() {
-        Optional<Dept> dept1 = deptRepository.findByDeptno(10);
+Dept dept1 = deptRepository.findByDeptno(30);
 
         log.info(">>>>>>>>>>>>" + dept1);
 
-        log.info("");
+        log.info("#################### ####################");
 
         List<Dept> list1 = deptRepository.findByDnameOrderByLocAsc("%A%");
 
         for (Dept dept : list1) {
             log.info(dept);
         }
+        log.info("#################### ####################");
+
+        List<Dept> list2 = deptRepository.findByLocLike("%A%");
+
+        for (Dept dept : list2) {
+            log.info(dept);
+        }
+
+        log.info("#################### ####################");
+
+        List<Dept> list3 = deptRepository.findByDeptnoBetween(10,20);
+
+        for (Dept dept : list3) {
+            log.info(dept);
+        }
+
     }
 
 }
