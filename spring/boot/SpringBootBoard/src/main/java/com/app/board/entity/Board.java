@@ -34,10 +34,10 @@ public class Board {
     @Column
     private String photo;
 
-    @Column
+    @Column(insertable = false, updatable = false)// 자동입력값이여서 값 입력 안하고 업뎃불가
     private LocalDate regdate;
 
-    @Column
+    @Column(insertable = false)//자동입력  업데이트해야함
     private LocalDate updatedate;
 
 

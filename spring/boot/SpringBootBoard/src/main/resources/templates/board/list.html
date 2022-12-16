@@ -33,7 +33,7 @@
                 <td th:text="${board.bno}">1</td>
                 <td>
                     <a th:text="${board.title}" th:href="@{/board/view(bno=${board.bno},p=${listPage.pageNum})}"></a>
-                    <span th:text="${board.replycnt}" class="badge bg-danger"></span>
+                    <!--<span th:text="${board.replycnt}" class="badge bg-danger"></span>-->
                 </td>
                 <td th:text="${board.writer}">테스트 작성</td>
                 <td th:text="${board.regdate}">2022-12-07</td>
