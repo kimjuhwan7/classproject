@@ -1,4 +1,4 @@
-package com.app.board.service;
+package com.app.board.service.reply;
 
 import com.app.board.domain.ReplyDTO;
 import com.app.board.entity.Reply;
@@ -18,7 +18,8 @@ public class ReplyListService {
     @Autowired
     private ReplyRepository replyRepository;
 
-    public List<Reply> selectAll(int bno) {
+    public List<Reply> selectAll(int bno){
+        //return replyMapper.selectAll(bno);
         return replyRepository.findByBno(bno);
     }
 

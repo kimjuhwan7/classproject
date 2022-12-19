@@ -1,6 +1,7 @@
-package com.app.board.service;
+package com.app.board.service.board;
 
 import com.app.board.domain.BoardArticleDTO;
+import com.app.board.domain.BoardDTO;
 import com.app.board.domain.BoardListPage;
 import com.app.board.entity.Board;
 import com.app.board.mapper.BoardMapper;
@@ -22,16 +23,17 @@ public class BoardListService {
     @Autowired
     private BoardRepository boardRepository;
 
-    public BoardListPage getPage(int pageNum) {
 
-        Page<Board> page = boardRepository.findAll(PageRequest.of(pageNum -1, 10, Sort.by("bno").descending()));
+    public BoardListPage getPage(int pageNum){
+
+        Page<Board> page = boardRepository.findAll(PageRequest.of(pageNum-1, 10, Sort.by("bno").descending()));
 
         // 게시물의 리스트
-        // List<BoardArticleDTO> list = boardMapper.selectList((pageNum - 1) * 10, 10);
+        //List<BoardArticleDTO> list = boardMapper.selectList((pageNum-1)*10, 10);
         List<Board> list = page.getContent();
-
+        
         // 전체 게시물의 개수
-//        int totalCount = boardMapper.totalCount();
+        //int totalCount = boardMapper.totalCount();
         int totalCount = (int) page.getTotalElements();
 
         BoardListPage boardListPage = new BoardListPage(10, pageNum, list, totalCount);
@@ -39,12 +41,12 @@ public class BoardListService {
         return boardListPage;
     }
 
-    public List<BoardArticleDTO> getList(int pageNum) {
+    public List<BoardArticleDTO> getList(int pageNum){
 
-        int index = (pageNum - 1) * 10;  // 1->0, 2->10, 3->20, 4->30
+        int index = (pageNum-1)*10;  // 1->0, 2->10, 3->20, 4->30
         int count = 10;
 
-        return boardMapper.selectList(index, count);
+        return boardMapper.selectList(index,count);
 
     }
 

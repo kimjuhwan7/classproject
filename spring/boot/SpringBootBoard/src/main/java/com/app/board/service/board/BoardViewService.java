@@ -1,4 +1,4 @@
-package com.app.board.service;
+package com.app.board.service.board;
 
 import com.app.board.domain.BoardDTO;
 import com.app.board.entity.Board;
@@ -15,9 +15,10 @@ public class BoardViewService {
 
     @Autowired
     private BoardRepository boardRepository;
+
     public Board selectBoardDTO(int bno){
-//        return boardMapper.selectByBno(bno);
         return boardRepository.findById(bno).get();
+        /*return boardMapper.selectByBno(bno);*/
     }
 
 }

@@ -1,7 +1,7 @@
-package com.app.board.service;
+package com.app.board.service.board;
 
 import com.app.board.domain.BoardDTO;
-import com.app.board.domain.BoardEditRequest;
+import com.app.board.domain.BoardWriteRequest;
 import com.app.board.entity.Board;
 import com.app.board.mapper.BoardMapper;
 import com.app.board.repository.BoardRepository;
@@ -17,7 +17,7 @@ import java.util.UUID;
 
 @Service
 @Log4j2
-public class BoardEditService {
+public class BoardWriteService {
 
     @Autowired
     private BoardMapper boardMapper;
@@ -25,16 +25,16 @@ public class BoardEditService {
     @Autowired
     private BoardRepository boardRepository;
 
-    public int edit(BoardEditRequest boardEditRequest) {
+    public int write(BoardWriteRequest boardWriteRequest){
 
-        MultipartFile file = boardEditRequest.getFormFile();
+        MultipartFile file = boardWriteRequest.getFormFile();
 
         File saveDir = null;
         String newFileName = null;
 
-        if (file != null && !file.isEmpty()) {
 
-            // 새로운 파일을 저장
+        if(file != null && !file.isEmpty() && file.getSize()>0){
+
             String absolutePath = new File("").getAbsolutePath();
             log.info(absolutePath);
 
@@ -42,60 +42,52 @@ public class BoardEditService {
             saveDir = new File(absolutePath, path);
 
             // 폴더가 존재하지 않으면 생성
-            if (!saveDir.exists()) {
+            if(!saveDir.exists()){
                 saveDir.mkdir();
                 log.info(">>>>>  photo dir 생성");
             }
 
             String uuid = UUID.randomUUID().toString();
             // 새로운 파일으 이름을 생성
-            newFileName = uuid + file.getOriginalFilename();
+            newFileName = uuid+file.getOriginalFilename();
             // 새로운 저장 파일의 경로
             File newFile = new File(saveDir, newFileName);
 
             try {
                 // 파일 저장
                 file.transferTo(newFile);
-                log.info("newFileName >>>>>>>>>>> " + newFileName);
             } catch (IOException e) {
-
-                log.info("IOException ... ");
                 throw new RuntimeException(e);
             }
 
         }
 
 
-        Board board = boardEditRequest.toBoardEntity();
-        if (newFileName != null) {
-            board.setPhoto(newFileName);
-        } else {
-            board.setPhoto(null);
-        }
+        // request -> Entity
+        //BoardDTO boardDTO = boardWriteRequest.toBoardDTO();
+        Board board =boardWriteRequest.toBoardEntity();
 
-        log.info(board);
+        if(newFileName != null){
+            board.setPhoto(newFileName);
+        }
 
         int result = 0;
 
-
-        // db update
-//            result = boardMapper.update(boardDTO);
-        boardRepository.save(board);
-
-        // 새로운 파일이 저장 되고 이전 파일이 존재한다면 ! -> 이전 파일을 삭제
-        String oldFileName = boardEditRequest.getOldFile();
-        if (newFileName != null && oldFileName != null && !oldFileName.isEmpty()) {
-            File delOldFile = new File(saveDir, oldFileName);
-            if (delOldFile.exists()) {
-                delOldFile.delete();
-                log.info(oldFileName + " 파일 삭제  ");
+        try {
+            // DB insert
+            // result = boardMapper.insert(boardDTO);
+            result = boardRepository.save(board) != null ? 1 : 0;
+        } catch (Exception e){
+            if(newFileName!=null){
+                File delFile = new File(saveDir, newFileName);
+                if(delFile.exists()){
+                    // 파일 삭제
+                    delFile.delete();
+                }
             }
         }
 
-
         return result;
-
     }
-
 
 }

@@ -19,6 +19,7 @@ public class BoardListPage {
     private int pageNum;
 
     // 게시물의 리스트
+    //private List<BoardArticleDTO> list;
     private List<Board> list;
 
     // 전체 게시물의 개수
@@ -26,7 +27,7 @@ public class BoardListPage {
 
     // 페이징의 시작 번호
     private int startNum;
-
+    
     // 페이직의 끝 번호
     private int endNum;
 

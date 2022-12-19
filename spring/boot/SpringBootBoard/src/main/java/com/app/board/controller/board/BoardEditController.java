@@ -1,8 +1,8 @@
 package com.app.board.controller.board;
 
 import com.app.board.domain.BoardEditRequest;
-import com.app.board.service.BoardEditService;
-import com.app.board.service.BoardViewService;
+import com.app.board.service.board.BoardEditService;
+import com.app.board.service.board.BoardViewService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

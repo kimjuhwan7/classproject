@@ -1,6 +1,7 @@
 package com.app.board.domain;
 
 import com.app.board.entity.Board;
+import com.app.board.entity.BoardMember;
 import lombok.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -15,12 +16,12 @@ public class BoardEditRequest {
     private int bno;
     private int curPageNum;
     private String title;
-    private String writer;
+    private Integer writer;     // String -> Integer
     private String content;
     private String oldFile;
     private MultipartFile formFile;
 
-    public BoardDTO toBoardDTO() {
+    /*public BoardDTO toBoardDTO(){
         return BoardDTO.builder()
                 .bno(bno)
                 .writer(writer)
@@ -28,15 +29,18 @@ public class BoardEditRequest {
                 .content(content)
                 .photo(oldFile)
                 .build();
-    }
+    }*/
 
-    public Board toBoardEntity() {
+    public Board toBoardEntity(){
         return Board.builder()
                 .bno(bno)
-                .writer(writer)
+                .writer(BoardMember.builder().idx(writer).build())
                 .title(title)
                 .content(content)
                 .photo(oldFile)
                 .build();
     }
+
+
+
 }

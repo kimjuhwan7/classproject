@@ -1,9 +1,7 @@
 package com.app.board.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -12,13 +10,14 @@ import java.time.LocalDate;
 @Table(name = "tbl_board")
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 @Builder
+@ToString
 public class Board {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     @Column
     private Integer bno;
 
@@ -28,17 +27,22 @@ public class Board {
     @Column
     private String content;
 
-    @Column
-    private String writer;
+    /*@Column(updatable = false)
+    private String writer;*/
+
+    @ManyToOne
+    @JoinColumn(name = "writer")
+    private BoardMember writer;
 
     @Column
     private String photo;
 
-    @Column(insertable = false, updatable = false)// 자동입력값이여서 값 입력 안하고 업뎃불가
+    @Column(insertable = false, updatable = false)
     private LocalDate regdate;
 
-    @Column(insertable = false)//자동입력  업데이트해야함
+    @Column(insertable = false)
     private LocalDate updatedate;
+
 
 
 }
