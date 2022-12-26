@@ -1,10 +1,11 @@
 import React from "react";
+import UserImg from "./UserImg";
 
 function UserInfo(props) {
   return (
     <div className="userInfo">
-      <UserInfo user={props.user} />
-      <div className="userInfoName">{props.user.userName}</div>
+      <UserImg user={props.user} />
+      <div className="userInfoName">{props.userName}</div>
     </div>
   );
 }
