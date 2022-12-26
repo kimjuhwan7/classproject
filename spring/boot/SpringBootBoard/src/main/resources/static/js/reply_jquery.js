@@ -22,7 +22,7 @@ $(document).ready(function (){
 
 })
 
-// 수정!!
+
 function setList(){
 
     // 비동기 통신 :댓글 리스트

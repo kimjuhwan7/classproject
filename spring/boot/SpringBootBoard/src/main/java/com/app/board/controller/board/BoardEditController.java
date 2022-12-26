@@ -38,8 +38,7 @@ public class BoardEditController {
     @PostMapping
     public String edit(
             BoardEditRequest boardEditRequest,
-            RedirectAttributes redirectAttributes
-
+            RedirectAttributes redirectAttributes//POST로 온 값을 파라미터로 받음
     ){
         log.info(boardEditRequest);
 

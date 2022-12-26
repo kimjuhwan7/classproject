@@ -21,6 +21,4 @@ public interface BoardRepository extends JpaRepository<Board, Integer> {
     @Query("delete from Board b where b.bno = :bno")
     int deleteByBno(@Param("bno") Integer bno);
 
-
-
 }

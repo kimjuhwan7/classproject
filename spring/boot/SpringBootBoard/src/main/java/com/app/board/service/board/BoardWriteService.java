@@ -68,6 +68,7 @@ public class BoardWriteService {
         Board board =boardWriteRequest.toBoardEntity();
 
         if(newFileName != null){
+
             board.setPhoto(newFileName);
         }
 
