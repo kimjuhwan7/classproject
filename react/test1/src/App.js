@@ -1,8 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
-import Comment from './components/Comment';
 
+import Toggle from './components/Toggle';
+import MyButton from './components/MyButton';
+import ConfirmButton from './components/ConfirmButton';
+import Greeting from './components/Greeting';
+import LoginControl from './LoginControl';
+import MailBox from './MailBox';
+import UserStatus from './UserStatus';
+import WarnningBanner from './components/WarnningBanner';
+import ToolBar from './ToolBar';
+import MainPage from './Mainpage';
 
+function App() {
+  return (
+    <MainPage />
+  )
+  /*  return (
+     <Notification massage="안녕하세요" />
+   ) */
+}
+
+/* 
 const comment = {
   user: {
     userName: '손흥민',
@@ -17,7 +36,7 @@ function App() {
     <Comment  user={comment.user} content={comment.content} replydate={comment.replydate}/>
   );
 }
-export default App;
+ */export default App;
 /* 
 <div className="App">
       <header className="App-header">
