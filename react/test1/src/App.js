@@ -1,20 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import DarkOrLight from './DarkOrLight';
+import ADisplay from './components/ADisplay';
 
-import Toggle from './components/Toggle';
-import MyButton from './components/MyButton';
-import ConfirmButton from './components/ConfirmButton';
-import Greeting from './components/Greeting';
-import LoginControl from './LoginControl';
-import MailBox from './MailBox';
-import UserStatus from './UserStatus';
-import WarnningBanner from './components/WarnningBanner';
-import ToolBar from './ToolBar';
-import MainPage from './Mainpage';
 
 function App() {
   return (
-    <MainPage />
+    <ADisplay  />
   )
   /*  return (
      <Notification massage="안녕하세요" />
