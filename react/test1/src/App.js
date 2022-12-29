@@ -1,12 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
-import DarkOrLight from './DarkOrLight';
-import ADisplay from './components/ADisplay';
+
+import Container from './components/ex1/Container';
+import WordContainer from './components/ex2/WordContainer';
 
 
 function App() {
   return (
-    <ADisplay  />
+    <WordContainer  />
   )
   /*  return (
      <Notification massage="안녕하세요" />
