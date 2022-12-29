@@ -7,7 +7,7 @@ import WordContainer from './components/ex2/WordContainer';
 
 function App() {
   return (
-    <WordContainer  />
+    <Container  />
   )
   /*  return (
      <Notification massage="안녕하세요" />

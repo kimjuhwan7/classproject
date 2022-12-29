@@ -36,3 +36,150 @@
     transform: rotate(360deg);
   }
 }
+* {
+  margin: 0px;
+  padding: 0px;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  padding-block-end: 0px;
+  padding-inline-start: 0px;
+}
+
+body {
+  width: 780px;
+  background-color: #fff;
+  border: 1px solid #aaa;
+
+  margin: 10px auto;
+  border-radius: 5px;
+
+  box-shadow: 3px 3px 3px #ddd;
+  padding: 10px;
+}
+
+/* header */
+header {
+  padding: 30px;
+}
+
+header>p {
+  color: cadetblue;
+  margin-top: 5px;
+}
+
+.title {
+  font-family: 'Noto Nastaliq Urdu', serif;
+}
+
+/* nav */
+nav {
+  height: 40px;
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+  overflow: hidden;
+}
+
+nav>ul {
+  float: left;
+  width: 450px;
+  overflow: hidden;
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  margin-block-start: 0px;
+  padding-block-end: 0px;
+
+}
+
+nav>ul>li {
+  line-height: 40px;
+  text-align: center;
+  float: left;
+  width: 120px;
+
+}
+
+nav>div {
+  float: right;
+  width: 330px;
+  text-align: right;
+  padding: 8px 0;
+}
+
+
+nav>div>input[type=text] {
+  height: 20px;
+  width: 150px;
+  padding-left: 10px;
+  border-radius: 10px 0 0 10px;
+  outline: 0;
+  border: 1px solid #aaa;
+  vertical-align: middle;
+  margin-right: -6px;
+}
+
+nav>div>input[type=button] {
+  width: 50px;
+  height: 22px;
+  border-radius: 0 10px 10px 0;
+  margin-left: -2px;
+  outline: 0;
+  border: 1px solid #aaa;
+  vertical-align: middle;
+}
+
+/* wrap */
+#wrap {
+  overflow: hidden;
+}
+
+/* section */
+section {
+  width: 590px;
+
+  float: left;
+}
+
+/* article */
+article {
+  padding: 10px;
+  border-bottom: 1px solid #aaa;
+}
+article>h2{
+  color: #666;
+  margin: 10px;
+}
+article>h2+p{
+  font-size: small;
+}
+article>img{
+  width: 80%;
+  margin: 20px 0;
+}
+.lh-180{
+  line-height: 180%;
+}
+/* asdie */
+aside {
+  width: 190px;
+  height: 200px;
+
+  float: right;
+}
+aside>h4{
+  margin-top: 20px;
+}
+aside>ul{
+  list-style: none;
+  margin-left: 13px;
+  margin-top: 5px;
+}
+
+/* footer */
+footer {
+  height: 40px;
+
+  text-align: center;
+  line-height: 40px;
+
+}
