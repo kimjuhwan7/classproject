@@ -3,12 +3,12 @@ import Ex1 from "../components/ex/Ex1";
 import PageLayout from "../layout/PageLayout";
 import {Grid, Paper} from "@mui/material";
 
-function SamplePage(props) {
+function AboutPage(props) {
     return (
-        <PageLayout title={'Sample Page'}>
+        <PageLayout title={'About Page'}>
             <Grid item xs={12} md={12} lg={12}>
-                <Paper sx={{p:2, display:'flex',flexDirection: 'column'}}>
-                    <h1>페이지의 컨텐츠 내용이 들어갑니다. Sample Page</h1>
+                <Paper sx={{p: 2, display: 'flex', flexDirection: 'column'}}>
+                    <h1>About Page</h1>
                     <Ex1/>
                 </Paper>
             </Grid>
@@ -16,4 +16,4 @@ function SamplePage(props) {
     );
 }
 
-export default SamplePage;
+export default AboutPage;
